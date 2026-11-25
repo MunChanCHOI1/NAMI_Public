@@ -1,0 +1,514 @@
+{
+  "schema_version": 2,
+  "protocol_version": "20261116_grouped_candidates_and_separate_final_offer",
+  "experiment": "candidate_sensitivity_probe",
+  "created_at_utc": "2026-11-16T07:34:09+00:00",
+  "backend": {
+    "kind": "zoro_native",
+    "is_model": true,
+    "configuration": {
+      "original_checkpoint": "/content/sessionguard/.cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/content/sessionguard/.cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/content/sessionguard/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0
+    },
+    "model_id": "trillionlabs/Zoro-1",
+    "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+    "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+    "backend": "transformers_native_pointer_head",
+    "dtype": "fp16",
+    "device": "cuda:0",
+    "gpu_name": "Tesla T4",
+    "decision_temperature": 1.0,
+    "temperature_source": "explicit_override; not independently calibrated",
+    "official_sglang_parity_verified": false,
+    "head_loaded": true,
+    "mock": false,
+    "gpu_execution_performed": true,
+    "runtime_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "5.17.0",
+      "accelerate": "1.15.0",
+      "huggingface-hub": "1.33.0",
+      "safetensors": "0.8.0"
+    },
+    "peak_cuda_memory_allocated_bytes": 8517483520,
+    "last_response_metadata": {
+      "request_sha256": "8cd4e3425c6dcbbd5f35f99422fc41de10ad1537cfa205febebeac12434bd0b1",
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "backend": "transformers_native_pointer_head",
+      "official_sglang_parity_verified": false,
+      "head_loaded": true,
+      "head_file_sha256": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db",
+      "generation_used": false,
+      "mock": false,
+      "authoring_gpu_tested": true,
+      "gpu_execution_performed": true,
+      "native_head_forward_calls": 1,
+      "dtype": "fp16",
+      "attention_backend": "eager",
+      "gdn_backend": "native_pytorch_no_fla_or_causal_conv1d",
+      "device": "cuda:0",
+      "gpu_name": "Tesla T4",
+      "decision_temperature": 1.0,
+      "temperature_source": "explicit_override; not independently calibrated",
+      "exported_temperature": 1.0,
+      "runtime_temperature_matches_export": true,
+      "backbone_loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "backbone_first_parameter_device": "cuda:0",
+      "backbone_first_parameter_dtype": "torch.float16",
+      "runtime_versions": {
+        "torch": "2.14.1+cu130",
+        "transformers": "5.17.0",
+        "accelerate": "1.15.0",
+        "huggingface-hub": "1.33.0",
+        "safetensors": "0.8.0"
+      },
+      "input_tokens_per_question": [
+        329
+      ],
+      "question_option_order": {
+        "final_offer": [
+          "false",
+          "true"
+        ]
+      },
+      "backbone_forward_latency_ms": 302.755,
+      "model_only_latency_ms": 304.126,
+      "backend_latency_ms": 308.593,
+      "peak_cuda_memory_allocated_bytes": 8517483520,
+      "probability_notice": "Probabilities rank allowed actions; they are not calibrated attack probabilities."
+    }
+  },
+  "provenance": {
+    "created_at_utc": "2026-11-16T07:30:33+00:00",
+    "git_commit": null,
+    "input_sha256": {
+      "config/model_pins.json": "f4eaf65c29927a462effc9af7159f560eb4c0460b57c5265526b682786d05fb0",
+      "negotiation/run_evaluation.py": "8b67e79f3bb9761a82343588951c89e3f69292bc05ed20fa851131e4eeb66240",
+      "negotiation/run_negotiation.py": "602a693d80ce33cf143b63c5be5284c31fa20ed2977b5a55ab5824562c0d696c",
+      "negotiation/run_probe.py": "4f4cf31afe3ad192668959c091b150a56d9d20e0354a8c0ceddef233723895b8",
+      "negotiation/src/negotiation_agent/__init__.py": "7c643f13a6c60b65e78c6d1d1a93fc8d8d8414d15ba3b60c945b22c43d1134fc",
+      "negotiation/src/negotiation_agent/backends.py": "c412c76589af38e5f5809be94ed5cc566209b154b637ad8bbc064509a8002ae1",
+      "negotiation/src/negotiation_agent/baselines.py": "f18a51b0db6a6d255e40b5aa669f3c3ceb2aae1189997008558d36de56c054d3",
+      "negotiation/src/negotiation_agent/cli.py": "4c9d62a60fd95fb13c284fd4030f76dc4daa8e122c834ca7a086c39366ff1fdf",
+      "negotiation/src/negotiation_agent/contracts.py": "7bb63b423cd01ce38d8cd1dd19213f9566fd27819ac390ced73a348ae308362f",
+      "negotiation/src/negotiation_agent/economics.py": "bfd78827d97be734bab1a71657469a3b317f69ee344dde0e23556bdedcd32f70",
+      "negotiation/src/negotiation_agent/evaluation.py": "391687d22b3e3236f880075e3698b6e519707a17b749f09c20aad2630a51a5d2",
+      "negotiation/src/negotiation_agent/metrics.py": "72ff392242038753a0fec195b8b3d1e36a8918c150d8bfaad2ee19d6ed2013b6",
+      "negotiation/src/negotiation_agent/policy.py": "5c2db96066e48f76ca5e945154f0287bf940a848b4e34a9dbe343997a4b6ae7d",
+      "negotiation/src/negotiation_agent/probe.py": "09532f792208ae135ada97f49ff4bf2780167e9e8e893270d913abeeba5f82ff",
+      "negotiation/src/negotiation_agent/provenance.py": "7216d3f54fce16c44331734338180d13dd16887cef9645e9606d6e10e3e20d74",
+      "negotiation/src/negotiation_agent/requests.py": "ea346e8f7225693e67625dff2d4bedf5c99fc583a3c3d6621fbaab22dc709571",
+      "negotiation/src/negotiation_agent/session.py": "30d9239798238587f1ff482f9ca8fc9390b4a358d0bf55f9288a481755323af0",
+      "negotiation/src/negotiation_agent/simulator.py": "42406962e5044ebf7705205e1daa0682d4c2357002bc5cdcbe6299c04039b6a9",
+      "pyproject.toml": "a614520a66479c760b302ee8a5b28c3fdfd8bac9dd01b2725ffea392dbbb93c8",
+      "requirements-cpu.lock.txt": "67ef3ee6983b45c3c307d0d0a730807d94ae14eac5bd3b78aa485b8d05a0fcca",
+      "requirements-gpu.txt": "c5ae9ab10891e55050195be3e835f89012e50b75615d4b0b3802f884b64d6552",
+      "src/sessionguard/__init__.py": "d26697564b55f4a71cc7c9e647acbd8e7908e3f0d49599cd841e8293ce1ace89",
+      "src/sessionguard/backends/__init__.py": "f57137b8086c18b5c21a39b33c144a5ba8e01cdcd725329ed8ba26f42244c90d",
+      "src/sessionguard/backends/zoro.py": "8ed39cb3de9533be0fcb76c7a75b64e17651ea1daf2274f561e97e017754acf5",
+      "src/sessionguard/contracts.py": "6bd6798a6a04958707f163d6c23e29b855a650c12c7166b6c15a46d302ea4769"
+    },
+    "model_pins": {
+      "schema_version": 1,
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_repository": "trillion-labs/trida-stack",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "official_source_files": {
+        "train/tools/export_kev_checkpoint.py": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "inference/zoro-1/decide_request.py": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "inference/zoro-1/decide_engine.py": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30"
+      },
+      "official_server_files": {
+        "inference/zoro-1/serve_decide.py": "6a009a3511cbd63b379ed5243dcebcd38e0ee25e0e9758df72a59ca289e54233"
+      },
+      "transformers_candidate_version": "5.17.0",
+      "real_zoro_gpu_execution_verified": true,
+      "official_sglang_parity_verified": false,
+      "temperature_policy": "original_checkpoint/temperature.json:text; absent => raw 1.0; explicit override must be recorded",
+      "official_decide_server_execution_verified": false
+    },
+    "execution_config": {
+      "backend": "zoro",
+      "original_checkpoint": "/content/sessionguard/.cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/content/sessionguard/.cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/content/sessionguard/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0,
+      "probe": {
+        "ladders": [
+          "price",
+          "payment",
+          "delivery",
+          "mixed"
+        ],
+        "max_states": null,
+        "variant_states": 4,
+        "final_offer_separate": true
+      }
+    },
+    "official_source_files": {
+      "train/tools/export_kev_checkpoint.py": {
+        "expected_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "actual_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_request.py": {
+        "expected_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "actual_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_engine.py": {
+        "expected_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "actual_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "matches_pin": true
+      }
+    },
+    "checkpoint_metadata_sha256": {
+      "original_checkpoint": {
+        "config.json": "ac5e925540bc34d0a16a4c403d00705c35c9cfbca5113af417a03b364dd82a92",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": "c04c66e3709d0ce626fa0fb30ed44db7c038d83fb9e8c303f3c66cd56de7d95b",
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": null,
+        "jev_head.pt": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db"
+      },
+      "exported_checkpoint": {
+        "config.json": "5509ddb7f687327c96a6a947e5866144cf009fe69d68a88e67913ec6fc140fc2",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": null,
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": "efb501bc19cc29963a27e519f951cf33b461b0af8ff88fdebbfd753b1d10f4f7",
+        "jev_head.pt": null
+      }
+    },
+    "notice": "Source/config snapshot only; execution is evidenced by each recorded response."
+  },
+  "evidence_class": "real_model_probe",
+  "complete": true,
+  "interrupted": false,
+  "scope": {
+    "synthetic_supplier_simulator": true,
+    "development_seeds_only": true,
+    "states": 24,
+    "planned_requests": 132,
+    "ladders": [
+      "price",
+      "payment",
+      "delivery",
+      "mixed"
+    ],
+    "supplier_groups": 16,
+    "planned_candidate_requests": 108,
+    "planned_final_offer_requests": 24,
+    "python": "3.13.16"
+  },
+  "errors": [],
+  "final_offer_probe": {
+    "supported": true,
+    "complete": true,
+    "status": "complete",
+    "note": "Separate diagnostic; not part of the candidate route thresholds.",
+    "questions_scored": 24,
+    "attempted_requests": 24,
+    "metrics": {
+      "auc": 0.7727272727272727,
+      "n": 24,
+      "base_rate": 0.08333333333333333,
+      "brier_base_rate": 0.07638888888888888,
+      "brier_raw": 0.18252856023383127,
+      "brier_skill_raw": -1.3894647885156095,
+      "brier_platt_leave_one_group_out": 0.08614061305134453,
+      "brier_skill_platt": -0.1276589344903285,
+      "platt_cv": {
+        "unit": "supplier_group",
+        "groups": 16,
+        "available": true,
+        "reason": null
+      },
+      "ece": 0.3367797589550416,
+      "bins": [
+        {
+          "bin": [
+            0.0,
+            0.2
+          ],
+          "n": 2,
+          "mean_p": 0.1769,
+          "accept_rate": 0.0
+        },
+        {
+          "bin": [
+            0.2,
+            0.4
+          ],
+          "n": 12,
+          "mean_p": 0.2841,
+          "accept_rate": 0.0833
+        },
+        {
+          "bin": [
+            0.4,
+            0.6
+          ],
+          "n": 5,
+          "mean_p": 0.5458,
+          "accept_rate": 0.0
+        },
+        {
+          "bin": [
+            0.6,
+            0.8
+          ],
+          "n": 4,
+          "mean_p": 0.6146,
+          "accept_rate": 0.0
+        },
+        {
+          "bin": [
+            0.8,
+            1.0
+          ],
+          "n": 1,
+          "mean_p": 0.8681,
+          "accept_rate": 1.0
+        }
+      ]
+    }
+  },
+  "metrics": {
+    "questions_scored": 456,
+    "discrimination": {
+      "auc_across_states": 0.7034207639373691,
+      "within_state_pair_accuracy": 0.8084832904884319,
+      "within_state_pairs": 778,
+      "cross_ladder_pair_accuracy": 0.7915360501567398,
+      "cross_ladder_pairs": 638
+    },
+    "reference_rule_discrimination": {
+      "auc_across_states": 0.5998803231275556,
+      "within_state_pair_accuracy": 0.987146529562982,
+      "within_state_pairs": 778,
+      "cross_ladder_pair_accuracy": 0.987460815047022,
+      "cross_ladder_pairs": 638
+    },
+    "by_subset": {
+      "mixed_sets": {
+        "questions": 120,
+        "model": {
+          "auc_across_states": 0.5387894288150042,
+          "within_state_pair_accuracy": 0.8181818181818182,
+          "within_state_pairs": 22,
+          "cross_ladder_pair_accuracy": null,
+          "cross_ladder_pairs": 0
+        },
+        "rule": {
+          "auc_across_states": 0.4904802500710429,
+          "within_state_pair_accuracy": 0.9090909090909091,
+          "within_state_pairs": 22,
+          "cross_ladder_pair_accuracy": null,
+          "cross_ladder_pairs": 0
+        }
+      },
+      "states_with_informative_statement": {
+        "questions": 152,
+        "model": {
+          "auc_across_states": 0.8237840590781768,
+          "within_state_pair_accuracy": 0.7471910112359551,
+          "within_state_pairs": 178,
+          "cross_ladder_pair_accuracy": 0.7194244604316546,
+          "cross_ladder_pairs": 139
+        },
+        "rule": {
+          "auc_across_states": 0.4222052457346575,
+          "within_state_pair_accuracy": 0.9831460674157303,
+          "within_state_pairs": 178,
+          "cross_ladder_pair_accuracy": 0.9784172661870504,
+          "cross_ladder_pairs": 139
+        }
+      }
+    },
+    "spread": {
+      "sets_with_both_outcomes": 29,
+      "median_within_set": 0.1581748127937317,
+      "overall_std": 0.101692922886467
+    },
+    "monotonicity": {
+      "price": {
+        "steps": 96,
+        "non_decreasing_rate": 0.7916666666666666,
+        "responsive_rate": 0.7291666666666666
+      },
+      "payment": {
+        "steps": 96,
+        "non_decreasing_rate": 0.5104166666666666,
+        "responsive_rate": 0.3125
+      },
+      "delivery": {
+        "steps": 72,
+        "non_decreasing_rate": 0.8611111111111112,
+        "responsive_rate": 0.7083333333333334
+      }
+    },
+    "calibration": {
+      "n": 456,
+      "base_rate": 0.5942982456140351,
+      "brier_base_rate": 0.2411078408741151,
+      "brier_raw": 0.4202155388588779,
+      "brier_skill_raw": -0.7428530624944578,
+      "brier_platt_leave_one_group_out": 0.23390332789166066,
+      "brier_skill_platt": 0.029880873870941405,
+      "platt_cv": {
+        "unit": "supplier_group",
+        "groups": 16,
+        "available": true,
+        "reason": null
+      },
+      "ece": 0.44977226567846773,
+      "bins": [
+        {
+          "bin": [
+            0.0,
+            0.2
+          ],
+          "n": 347,
+          "mean_p": 0.0992,
+          "accept_rate": 0.5331
+        },
+        {
+          "bin": [
+            0.2,
+            0.4
+          ],
+          "n": 100,
+          "mean_p": 0.2684,
+          "accept_rate": 0.77
+        },
+        {
+          "bin": [
+            0.4,
+            0.6
+          ],
+          "n": 7,
+          "mean_p": 0.4781,
+          "accept_rate": 1.0
+        },
+        {
+          "bin": [
+            0.6,
+            0.8
+          ],
+          "n": 2,
+          "mean_p": 0.6528,
+          "accept_rate": 1.0
+        },
+        {
+          "bin": [
+            0.8,
+            1.0
+          ],
+          "n": 0
+        }
+      ]
+    },
+    "decision_value": {
+      "states": 24,
+      "groups": 16,
+      "bootstrap_unit": "supplier_group",
+      "bootstrap_resamples": 2000,
+      "mean_saving_model": 66840.75,
+      "mean_saving_rule_heuristic": 114185.5,
+      "mean_saving_always_max_saving": 11790.416666666666,
+      "mean_saving_oracle": 156491.95833333334,
+      "gain_vs_rule_mean": -47344.75,
+      "gain_vs_rule_ci90_by_group": [
+        -90901.92,
+        -9777.166666666666
+      ]
+    },
+    "message_sensitivity": {
+      "pairs": 8,
+      "mean_effect": -0.06664805812761188,
+      "positive_rate": 0.0
+    },
+    "invariance": {
+      "meaningful_for_this_backend": true,
+      "relabel": {
+        "n": 20,
+        "mean_abs_diff": 0.08139366251416505,
+        "max_abs_diff": 0.30082935094833374
+      },
+      "term_order": {
+        "n": 20,
+        "mean_abs_diff": 0.029134634230285884,
+        "max_abs_diff": 0.12890185415744781
+      },
+      "inverted": {
+        "n": 20,
+        "mean_abs_diff": 0.15709034409373998,
+        "max_abs_diff": 0.27063703536987305
+      }
+    },
+    "latency_ms_per_request": {
+      "min": 744.0,
+      "median": 1296.1,
+      "max": 7752.9
+    }
+  },
+  "verdict": {
+    "route": "C_or_D_candidate_scoring_weak_run_action_choice_probe",
+    "checks": {
+      "responsive": true,
+      "ranking_ok": true,
+      "ranking_beats_rule": false,
+      "threshold_across_states_ok": true,
+      "calibration_raw_ok": false,
+      "calibration_after_platt_ok": false,
+      "value_vs_rule_ok": false
+    },
+    "thresholds": {
+      "auc_across_states_min": 0.7,
+      "within_state_pair_accuracy_min": 0.7,
+      "cross_ladder_pair_accuracy_min": 0.6,
+      "median_spread_min": 0.1,
+      "overall_std_min": 0.1,
+      "brier_skill_min": 0.05,
+      "ece_max": 0.15,
+      "value_gain_ci_low_min": 0.0,
+      "invariance_mean_abs_diff_warn": 0.1
+    },
+    "counts_as_model_evidence": true,
+    "note": "real-model probe on synthetic suppliers; not a final evaluation"
+  },
+  "calls_file": "runs/negotiation/colab/probe.json.calls.jsonl",
+  "curation": {
+    "source_commit": "2f57d074c039646dde96ad1afa9e90247b87037a",
+    "source_file": "probe.json",
+    "source_sha256": "49b9545df9c73ac7f94dd4d11d5748c79251f1a656c796af63d583c4d3833c32",
+    "trials": 1,
+    "archive_sha256": "9c5a2a1416bad2063f37d70e1979284d6b65a73a77b98003c7153c60375e9afb"
+  },
+  "actual_requests": 132,
+  "actual_questions": 540,
+  "backend_call_seconds_total": 159.88639999999998
+}

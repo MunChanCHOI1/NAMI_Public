@@ -1,0 +1,10 @@
+# Keep the already-working CUDA PyTorch installation. No torch pin here.
+# Install with a constraint for the current torch version; see docs/GPU_RUNBOOK.md.
+# This is a source-reviewed GPU candidate, not a GPU-validated lock.
+transformers==5.17.0
+accelerate>=1.0,<2
+huggingface_hub>=1.0,<2
+safetensors>=0.4,<1
+packaging>=23
+pillow>=10
+psutil>=5.9

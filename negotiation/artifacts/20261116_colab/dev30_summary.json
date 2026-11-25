@@ -1,0 +1,2007 @@
+{
+  "schema_version": 2,
+  "experiment": "full_negotiation_evaluation",
+  "created_at_utc": "2026-11-16T07:38:52+00:00",
+  "split": "dev",
+  "evaluation_mode": "development",
+  "protocol": {},
+  "provenance": {
+    "created_at_utc": "2026-11-16T07:35:44+00:00",
+    "git_commit": null,
+    "input_sha256": {
+      "config/model_pins.json": "f4eaf65c29927a462effc9af7159f560eb4c0460b57c5265526b682786d05fb0",
+      "negotiation/run_evaluation.py": "8b67e79f3bb9761a82343588951c89e3f69292bc05ed20fa851131e4eeb66240",
+      "negotiation/run_negotiation.py": "602a693d80ce33cf143b63c5be5284c31fa20ed2977b5a55ab5824562c0d696c",
+      "negotiation/run_probe.py": "4f4cf31afe3ad192668959c091b150a56d9d20e0354a8c0ceddef233723895b8",
+      "negotiation/src/negotiation_agent/__init__.py": "7c643f13a6c60b65e78c6d1d1a93fc8d8d8414d15ba3b60c945b22c43d1134fc",
+      "negotiation/src/negotiation_agent/backends.py": "c412c76589af38e5f5809be94ed5cc566209b154b637ad8bbc064509a8002ae1",
+      "negotiation/src/negotiation_agent/baselines.py": "f18a51b0db6a6d255e40b5aa669f3c3ceb2aae1189997008558d36de56c054d3",
+      "negotiation/src/negotiation_agent/cli.py": "4c9d62a60fd95fb13c284fd4030f76dc4daa8e122c834ca7a086c39366ff1fdf",
+      "negotiation/src/negotiation_agent/contracts.py": "7bb63b423cd01ce38d8cd1dd19213f9566fd27819ac390ced73a348ae308362f",
+      "negotiation/src/negotiation_agent/economics.py": "bfd78827d97be734bab1a71657469a3b317f69ee344dde0e23556bdedcd32f70",
+      "negotiation/src/negotiation_agent/evaluation.py": "391687d22b3e3236f880075e3698b6e519707a17b749f09c20aad2630a51a5d2",
+      "negotiation/src/negotiation_agent/metrics.py": "72ff392242038753a0fec195b8b3d1e36a8918c150d8bfaad2ee19d6ed2013b6",
+      "negotiation/src/negotiation_agent/policy.py": "5c2db96066e48f76ca5e945154f0287bf940a848b4e34a9dbe343997a4b6ae7d",
+      "negotiation/src/negotiation_agent/probe.py": "09532f792208ae135ada97f49ff4bf2780167e9e8e893270d913abeeba5f82ff",
+      "negotiation/src/negotiation_agent/provenance.py": "7216d3f54fce16c44331734338180d13dd16887cef9645e9606d6e10e3e20d74",
+      "negotiation/src/negotiation_agent/requests.py": "ea346e8f7225693e67625dff2d4bedf5c99fc583a3c3d6621fbaab22dc709571",
+      "negotiation/src/negotiation_agent/session.py": "30d9239798238587f1ff482f9ca8fc9390b4a358d0bf55f9288a481755323af0",
+      "negotiation/src/negotiation_agent/simulator.py": "42406962e5044ebf7705205e1daa0682d4c2357002bc5cdcbe6299c04039b6a9",
+      "pyproject.toml": "a614520a66479c760b302ee8a5b28c3fdfd8bac9dd01b2725ffea392dbbb93c8",
+      "requirements-cpu.lock.txt": "67ef3ee6983b45c3c307d0d0a730807d94ae14eac5bd3b78aa485b8d05a0fcca",
+      "requirements-gpu.txt": "c5ae9ab10891e55050195be3e835f89012e50b75615d4b0b3802f884b64d6552",
+      "src/sessionguard/__init__.py": "d26697564b55f4a71cc7c9e647acbd8e7908e3f0d49599cd841e8293ce1ace89",
+      "src/sessionguard/backends/__init__.py": "f57137b8086c18b5c21a39b33c144a5ba8e01cdcd725329ed8ba26f42244c90d",
+      "src/sessionguard/backends/zoro.py": "8ed39cb3de9533be0fcb76c7a75b64e17651ea1daf2274f561e97e017754acf5",
+      "src/sessionguard/contracts.py": "6bd6798a6a04958707f163d6c23e29b855a650c12c7166b6c15a46d302ea4769"
+    },
+    "model_pins": {
+      "schema_version": 1,
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_repository": "trillion-labs/trida-stack",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "official_source_files": {
+        "train/tools/export_kev_checkpoint.py": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "inference/zoro-1/decide_request.py": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "inference/zoro-1/decide_engine.py": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30"
+      },
+      "official_server_files": {
+        "inference/zoro-1/serve_decide.py": "6a009a3511cbd63b379ed5243dcebcd38e0ee25e0e9758df72a59ca289e54233"
+      },
+      "transformers_candidate_version": "5.17.0",
+      "real_zoro_gpu_execution_verified": true,
+      "official_sglang_parity_verified": false,
+      "temperature_policy": "original_checkpoint/temperature.json:text; absent => raw 1.0; explicit override must be recorded",
+      "official_decide_server_execution_verified": false
+    },
+    "execution_config": {
+      "backend": "zoro",
+      "original_checkpoint": "/content/sessionguard/.cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/content/sessionguard/.cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/content/sessionguard/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0,
+      "policy": {
+        "prior_concession": 150000,
+        "final_prior_by_round": [
+          0.0,
+          0.15,
+          0.45,
+          0.5
+        ],
+        "reserve_margin": 30000,
+        "max_candidates": 5
+      },
+      "buyer_private": {
+        "target_total_cost": 10200000,
+        "alternative": {
+          "unit_price": 10900,
+          "delivery_days": 14,
+          "payment_days": 30
+        },
+        "alternative_valid_through_round": 5,
+        "auto_bounds": {
+          "max_unit_price": 10600,
+          "max_delivery_days": 21,
+          "min_payment_days": 30,
+          "max_total_cost": 10600000
+        },
+        "company_bounds": {
+          "max_unit_price": 10900,
+          "max_delivery_days": 30,
+          "min_payment_days": 0,
+          "max_total_cost": 10845000
+        },
+        "hard_max_delivery_days": 30,
+        "preferred_delivery_days": 14,
+        "delay_cost_per_day": 20000,
+        "capital_cost_annual": 0.06,
+        "round_cost": 10000,
+        "approval_cost": 30000
+      },
+      "cases": 30,
+      "approver": "auto",
+      "calibration": null,
+      "real_model_requested": true
+    },
+    "official_source_files": {
+      "train/tools/export_kev_checkpoint.py": {
+        "expected_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "actual_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_request.py": {
+        "expected_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "actual_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_engine.py": {
+        "expected_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "actual_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "matches_pin": true
+      }
+    },
+    "checkpoint_metadata_sha256": {
+      "original_checkpoint": {
+        "config.json": "ac5e925540bc34d0a16a4c403d00705c35c9cfbca5113af417a03b364dd82a92",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": "c04c66e3709d0ce626fa0fb30ed44db7c038d83fb9e8c303f3c66cd56de7d95b",
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": null,
+        "jev_head.pt": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db"
+      },
+      "exported_checkpoint": {
+        "config.json": "5509ddb7f687327c96a6a947e5866144cf009fe69d68a88e67913ec6fc140fc2",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": null,
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": "efb501bc19cc29963a27e519f951cf33b461b0af8ff88fdebbfd753b1d10f4f7",
+        "jev_head.pt": null
+      }
+    },
+    "notice": "Source/config snapshot only; execution is evidenced by each recorded response."
+  },
+  "backend": {
+    "kind": "zoro_native",
+    "is_model": true,
+    "configuration": {
+      "original_checkpoint": "/content/sessionguard/.cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/content/sessionguard/.cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/content/sessionguard/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0
+    },
+    "model_id": "trillionlabs/Zoro-1",
+    "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+    "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+    "backend": "transformers_native_pointer_head",
+    "dtype": "fp16",
+    "device": "cuda:0",
+    "gpu_name": "Tesla T4",
+    "decision_temperature": 1.0,
+    "temperature_source": "explicit_override; not independently calibrated",
+    "official_sglang_parity_verified": false,
+    "head_loaded": true,
+    "mock": false,
+    "gpu_execution_performed": true,
+    "runtime_versions": {
+      "torch": "2.14.1+cu130",
+      "transformers": "5.17.0",
+      "accelerate": "1.15.0",
+      "huggingface-hub": "1.33.0",
+      "safetensors": "0.8.0"
+    },
+    "peak_cuda_memory_allocated_bytes": 8532835840,
+    "last_response_metadata": {
+      "request_sha256": "1a957e59610260a0ae2d9c284dc9196ba5772bf0f5f474ab2c1da1d30010e5bd",
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "backend": "transformers_native_pointer_head",
+      "official_sglang_parity_verified": false,
+      "head_loaded": true,
+      "head_file_sha256": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db",
+      "generation_used": false,
+      "mock": false,
+      "authoring_gpu_tested": true,
+      "gpu_execution_performed": true,
+      "native_head_forward_calls": 5,
+      "dtype": "fp16",
+      "attention_backend": "eager",
+      "gdn_backend": "native_pytorch_no_fla_or_causal_conv1d",
+      "device": "cuda:0",
+      "gpu_name": "Tesla T4",
+      "decision_temperature": 1.0,
+      "temperature_source": "explicit_override; not independently calibrated",
+      "exported_temperature": 1.0,
+      "runtime_temperature_matches_export": true,
+      "backbone_loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "backbone_first_parameter_device": "cuda:0",
+      "backbone_first_parameter_dtype": "torch.float16",
+      "runtime_versions": {
+        "torch": "2.14.1+cu130",
+        "transformers": "5.17.0",
+        "accelerate": "1.15.0",
+        "huggingface-hub": "1.33.0",
+        "safetensors": "0.8.0"
+      },
+      "input_tokens_per_question": [
+        390,
+        389,
+        390,
+        389,
+        372
+      ],
+      "question_option_order": {
+        "C1": [
+          "false",
+          "true"
+        ],
+        "C2": [
+          "false",
+          "true"
+        ],
+        "C3": [
+          "false",
+          "true"
+        ],
+        "C4": [
+          "false",
+          "true"
+        ],
+        "final_offer": [
+          "false",
+          "true"
+        ]
+      },
+      "backbone_forward_latency_ms": 1729.499,
+      "model_only_latency_ms": 1737.527,
+      "backend_latency_ms": 1744.293,
+      "peak_cuda_memory_allocated_bytes": 8532835840,
+      "probability_notice": "Probabilities rank allowed actions; they are not calibrated attack probabilities."
+    }
+  },
+  "evidence_class": "real_model_run",
+  "agent_is_rule_policy": false,
+  "complete": true,
+  "interrupted": false,
+  "config": {
+    "policy": {
+      "prior_concession": 150000,
+      "final_prior_by_round": [
+        0.0,
+        0.15,
+        0.45,
+        0.5
+      ],
+      "reserve_margin": 30000,
+      "max_candidates": 5
+    },
+    "cases": 30,
+    "approver": "approve_all",
+    "python": "3.13.16"
+  },
+  "scope": "synthetic rule-based suppliers; not evidence about real negotiations",
+  "policies": {
+    "agent": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 306426.4666666667,
+      "mean_net_saving_after_process_costs": 267093.13333333336,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.88,
+        "supplier_walked": 3,
+        "mean_capture_of_attainable": 0.5425874354604565,
+        "target_met_rate": 0.12
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 4
+      },
+      "process": {
+        "mean_rounds_used": 2.6666666666666665,
+        "approval_cards": 15,
+        "model_requests": 77,
+        "latency_ms_per_request": {
+          "median": 1580.0,
+          "max": 6720.3
+        }
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 4,
+        "final_saving_over_saving_given_up": 1.4437185979251188
+      },
+      "final_offer_estimates": {
+        "n": 76,
+        "source": [
+          "backend_estimate"
+        ],
+        "base_rate": 0.15789473684210525,
+        "auc": 0.5638020833333334,
+        "brier": 0.21976409029312147,
+        "brier_base_rate": 0.13296398891966757,
+        "brier_skill": -0.6528090957461847,
+        "note": "rounds before the public last round, on states this policy reached"
+      },
+      "acceptance_estimates": {
+        "n": 333,
+        "base_rate": 0.2222222222222222,
+        "auc": 0.6741104038401335,
+        "brier": 0.17411344890360286,
+        "brier_base_rate": 0.17283950617283952,
+        "brier_skill": -0.0073706686565593316,
+        "ece": 0.1053965724221579,
+        "bins": [
+          {
+            "bin": [
+              0.0,
+              0.2
+            ],
+            "n": 303,
+            "mean_p": 0.1017,
+            "accept_rate": 0.1947
+          },
+          {
+            "bin": [
+              0.2,
+              0.4
+            ],
+            "n": 28,
+            "mean_p": 0.2589,
+            "accept_rate": 0.5
+          },
+          {
+            "bin": [
+              0.4,
+              0.6
+            ],
+            "n": 2,
+            "mean_p": 0.4152,
+            "accept_rate": 0.5
+          },
+          {
+            "bin": [
+              0.6,
+              0.8
+            ],
+            "n": 0
+          },
+          {
+            "bin": [
+              0.8,
+              1.0
+            ],
+            "n": 0
+          }
+        ],
+        "note": "scored only on states this policy reached"
+      }
+    },
+    "rule_policy": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 284263.6666666667,
+      "mean_net_saving_after_process_costs": 239930.33333333334,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.84,
+        "supplier_walked": 4,
+        "mean_capture_of_attainable": 0.4982311514754383,
+        "target_met_rate": 0.04
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 5
+      },
+      "process": {
+        "mean_rounds_used": 2.6666666666666665,
+        "approval_cards": 20,
+        "model_requests": 76,
+        "latency_ms_per_request": {
+          "median": 0.0,
+          "max": 0.0
+        }
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 5,
+        "final_saving_over_saving_given_up": 0.6958230294288077
+      },
+      "final_offer_estimates": {
+        "n": 75,
+        "source": [
+          "policy_prior"
+        ],
+        "base_rate": 0.14666666666666667,
+        "auc": 0.8302556818181818,
+        "brier": 0.09903333333333333,
+        "brier_base_rate": 0.12515555555555555,
+        "brier_skill": 0.20871803977272718,
+        "note": "rounds before the public last round, on states this policy reached"
+      },
+      "acceptance_estimates": {
+        "n": 280,
+        "base_rate": 0.21428571428571427,
+        "auc": 0.8403030303030303,
+        "brier": 0.19018034476212958,
+        "brier_base_rate": 0.1683673469387755,
+        "brier_skill": -0.1295559870720424,
+        "ece": 0.18568724629315478,
+        "bins": [
+          {
+            "bin": [
+              0.0,
+              0.2
+            ],
+            "n": 224,
+            "mean_p": 0.0159,
+            "accept_rate": 0.1518
+          },
+          {
+            "bin": [
+              0.2,
+              0.4
+            ],
+            "n": 8,
+            "mean_p": 0.2924,
+            "accept_rate": 0.625
+          },
+          {
+            "bin": [
+              0.4,
+              0.6
+            ],
+            "n": 10,
+            "mean_p": 0.5015,
+            "accept_rate": 0.3
+          },
+          {
+            "bin": [
+              0.6,
+              0.8
+            ],
+            "n": 4,
+            "mean_p": 0.7282,
+            "accept_rate": 0.5
+          },
+          {
+            "bin": [
+              0.8,
+              1.0
+            ],
+            "n": 34,
+            "mean_p": 0.94,
+            "accept_rate": 0.4706
+          }
+        ],
+        "note": "scored only on states this policy reached"
+      }
+    },
+    "fixed_concession": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 260145.5,
+      "mean_net_saving_after_process_costs": 230812.16666666666,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.72,
+        "supplier_walked": 7,
+        "mean_capture_of_attainable": 0.41727102609814354,
+        "target_met_rate": 0.12
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 2
+      },
+      "process": {
+        "mean_rounds_used": 2.6666666666666665,
+        "approval_cards": 4,
+        "model_requests": 0,
+        "latency_ms_per_request": null
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 8,
+        "final_saving_over_saving_given_up": 0.4082850769758991
+      }
+    },
+    "midpoint": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 64341.36666666667,
+      "mean_net_saving_after_process_costs": -17991.966666666667,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.96,
+        "supplier_walked": 1,
+        "mean_capture_of_attainable": 0.09977156430556898,
+        "target_met_rate": 0.0
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 16
+      },
+      "process": {
+        "mean_rounds_used": 2.1333333333333333,
+        "approval_cards": 61,
+        "model_requests": 0,
+        "latency_ms_per_request": null
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 0,
+        "final_saving_over_saving_given_up": null
+      }
+    },
+    "reference_true_acceptance": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 348003.93333333335,
+      "mean_net_saving_after_process_costs": 314337.26666666666,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.96,
+        "supplier_walked": 1,
+        "mean_capture_of_attainable": 0.6509755862362923,
+        "target_met_rate": 0.12
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 1
+      },
+      "process": {
+        "mean_rounds_used": 2.533333333333333,
+        "approval_cards": 11,
+        "model_requests": 72,
+        "latency_ms_per_request": {
+          "median": 0.1,
+          "max": 0.1
+        }
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 3,
+        "final_saving_over_saving_given_up": 5.906388654951589
+      },
+      "final_offer_estimates": {
+        "n": 71,
+        "source": [
+          "backend_estimate"
+        ],
+        "base_rate": 0.1267605633802817,
+        "auc": 1.0,
+        "brier": 0.0,
+        "brier_base_rate": 0.11069232295179526,
+        "brier_skill": 1.0,
+        "note": "rounds before the public last round, on states this policy reached"
+      },
+      "note": "evaluator-only reference using hidden supplier information; an upper reference for this decision rule, not a competitor"
+    }
+  },
+  "agent_minus": {
+    "rule_policy": {
+      "realized_saving": {
+        "metric": "realized_saving",
+        "cases": 30,
+        "mean_difference": 22162.8,
+        "ci90": [
+          -16307.4,
+          62439.9
+        ],
+        "wins": 7,
+        "ties": 12,
+        "losses": 11
+      },
+      "net_saving": {
+        "metric": "net_saving",
+        "cases": 30,
+        "mean_difference": 27162.8,
+        "ci90": [
+          -11886.4,
+          67025.13333333333
+        ],
+        "wins": 10,
+        "ties": 10,
+        "losses": 10
+      }
+    },
+    "fixed_concession": {
+      "realized_saving": {
+        "metric": "realized_saving",
+        "cases": 30,
+        "mean_difference": 46280.96666666667,
+        "ci90": [
+          13455.733333333334,
+          83420.53333333334
+        ],
+        "wins": 10,
+        "ties": 17,
+        "losses": 3
+      },
+      "net_saving": {
+        "metric": "net_saving",
+        "cases": 30,
+        "mean_difference": 36280.96666666667,
+        "ci90": [
+          2137.6,
+          74830.46666666666
+        ],
+        "wins": 7,
+        "ties": 13,
+        "losses": 10
+      }
+    },
+    "midpoint": {
+      "realized_saving": {
+        "metric": "realized_saving",
+        "cases": 30,
+        "mean_difference": 242085.1,
+        "ci90": [
+          190803.06666666668,
+          291801.86666666664
+        ],
+        "wins": 22,
+        "ties": 6,
+        "losses": 2
+      },
+      "net_saving": {
+        "metric": "net_saving",
+        "cases": 30,
+        "mean_difference": 285085.1,
+        "ci90": [
+          237020.63333333333,
+          331123.13333333336
+        ],
+        "wins": 30,
+        "ties": 0,
+        "losses": 0
+      }
+    },
+    "reference_true_acceptance": {
+      "realized_saving": {
+        "metric": "realized_saving",
+        "cases": 30,
+        "mean_difference": -41577.46666666667,
+        "ci90": [
+          -76009.9,
+          -14207.033333333333
+        ],
+        "wins": 5,
+        "ties": 11,
+        "losses": 14
+      },
+      "net_saving": {
+        "metric": "net_saving",
+        "cases": 30,
+        "mean_difference": -47244.13333333333,
+        "ci90": [
+          -79812.16666666667,
+          -21892.9
+        ],
+        "wins": 2,
+        "ties": 7,
+        "losses": 21
+      }
+    }
+  },
+  "curation": {
+    "source_commit": "2f57d074c039646dde96ad1afa9e90247b87037a",
+    "source_file": "dev30.json",
+    "source_sha256": "842f22f1a049d7efb981d35b9d559cae6c5eda3612da4d1a785662b8955520b8",
+    "trials": 1,
+    "archive_sha256": "9c5a2a1416bad2063f37d70e1979284d6b65a73a77b98003c7153c60375e9afb"
+  },
+  "actual_requests": 77,
+  "actual_questions": 410,
+  "case_outcomes": [
+    {
+      "case_id": "dev-1100",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 319513,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 210795,
+        "net_saving": 160795,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1101",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 398921,
+        "net_saving": 378921,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 459710,
+        "net_saving": 439710,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 398921,
+        "net_saving": 378921,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 496247,
+        "net_saving": 446247,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1102",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 186247,
+        "net_saving": 86247,
+        "rounds_used": 4,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 186247,
+        "net_saving": 86247,
+        "rounds_used": 4,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 190992,
+        "net_saving": 120992,
+        "rounds_used": 4,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -127430,
+        "rounds_used": 4,
+        "approval_cards": 4,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 192373,
+        "net_saving": 122373,
+        "rounds_used": 4,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1103",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 428625,
+        "net_saving": 418625,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -7430,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 428625,
+        "net_saving": 418625,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1104",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 496247,
+        "net_saving": 446247,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 62274,
+        "net_saving": 22274,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1105",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -120000,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1106",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 280894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 336247,
+        "net_saving": 246247,
+        "rounds_used": 4,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 336247,
+        "net_saving": 246247,
+        "rounds_used": 4,
+        "approval_cards": 2,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1107",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 647836,
+        "net_saving": 637836,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 230598,
+        "net_saving": 190598,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 647836,
+        "net_saving": 637836,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1108",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 280894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -87430,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1109",
+      "agent": {
+        "status": "ended_alternative",
+        "realized_saving": 0,
+        "net_saving": -100000,
+        "rounds_used": 5,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "ended_alternative",
+        "realized_saving": 0,
+        "net_saving": -100000,
+        "rounds_used": 5,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -110000,
+        "rounds_used": 5,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -200000,
+        "rounds_used": 5,
+        "approval_cards": 5,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "ended_alternative",
+        "realized_saving": 0,
+        "net_saving": -70000,
+        "rounds_used": 5,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1110",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 496247,
+        "net_saving": 446247,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1111",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 496247,
+        "net_saving": 446247,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1112",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 496247,
+        "net_saving": 446247,
+        "rounds_used": 2,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1113",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -80000,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1114",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 290894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 290894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 349414,
+        "net_saving": 329414,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 349414,
+        "net_saving": 329414,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1115",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -120000,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1116",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 200894,
+        "net_saving": 150894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1117",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 390400,
+        "net_saving": 370400,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 390400,
+        "net_saving": 370400,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 359315,
+        "net_saving": 339315,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 42472,
+        "net_saving": 2472,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 359315,
+        "net_saving": 339315,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1118",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1119",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 280894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -87430,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1120",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -120000,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1121",
+      "agent": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -60000,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -120000,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1122",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 186247,
+        "net_saving": 116247,
+        "rounds_used": 4,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -70000,
+        "rounds_used": 4,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -87430,
+        "rounds_used": 3,
+        "approval_cards": 3,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1123",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 339513,
+        "net_saving": 309513,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1124",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 487935,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 260302,
+        "net_saving": 250302,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 647836,
+        "net_saving": 637836,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1125",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 477935,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 52373,
+        "net_saving": -27627,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 499315,
+        "net_saving": 479315,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1126",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 537540,
+        "net_saving": 527540,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 568625,
+        "net_saving": 558625,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 537540,
+        "net_saving": 527540,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 220696,
+        "net_saving": 180696,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 537540,
+        "net_saving": 527540,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1127",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 340894,
+        "net_saving": 290894,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -30000,
+        "rounds_used": 3,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -47430,
+        "rounds_used": 2,
+        "approval_cards": 2,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 346247,
+        "net_saving": 286247,
+        "rounds_used": 3,
+        "approval_cards": 1,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1128",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "agreed",
+        "realized_saving": 497935,
+        "net_saving": 487935,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "agreed",
+        "realized_saving": 646455,
+        "net_saving": 636455,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 329611,
+        "net_saving": 319611,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 647836,
+        "net_saving": 637836,
+        "rounds_used": 1,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    },
+    {
+      "case_id": "dev-1129",
+      "agent": {
+        "status": "agreed",
+        "realized_saving": 398921,
+        "net_saving": 388921,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "rule_policy": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "fixed_concession": {
+        "status": "supplier_walked",
+        "realized_saving": 0,
+        "net_saving": -20000,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      },
+      "midpoint": {
+        "status": "agreed",
+        "realized_saving": 32570,
+        "net_saving": -7430,
+        "rounds_used": 1,
+        "approval_cards": 1,
+        "authority_violations": 0
+      },
+      "reference_true_acceptance": {
+        "status": "agreed",
+        "realized_saving": 398921,
+        "net_saving": 388921,
+        "rounds_used": 2,
+        "approval_cards": 0,
+        "authority_violations": 0
+      }
+    }
+  ],
+  "backend_call_seconds_total": 134.85410000000002
+}

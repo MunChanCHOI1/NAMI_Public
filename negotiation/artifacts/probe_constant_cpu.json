@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "experiment": "candidate_sensitivity_probe",
+  "created_at_utc": "2026-11-16T06:07:09+00:00",
+  "backend": {
+    "kind": "mock_constant",
+    "is_model": false,
+    "value": 0.5
+  },
+  "evidence_class": "cpu_reference_not_model_evidence",
+  "complete": true,
+  "scope": {
+    "synthetic_supplier_simulator": true,
+    "development_seeds_only": true,
+    "states": 24,
+    "planned_requests": 108,
+    "ladders": [
+      "price",
+      "payment",
+      "delivery",
+      "mixed"
+    ],
+    "python": "3.13.18"
+  },
+  "errors": [],
+  "metrics": {
+    "questions_scored": 456,
+    "discrimination": {
+      "auc_across_states": 0.5,
+      "within_state_pair_accuracy": 0.5,
+      "within_state_pairs": 778,
+      "cross_ladder_pair_accuracy": 0.5,
+      "cross_ladder_pairs": 638
+    },
+    "reference_rule_discrimination": {
+      "auc_across_states": 0.5998803231275556,
+      "within_state_pair_accuracy": 0.987146529562982,
+      "within_state_pairs": 778,
+      "cross_ladder_pair_accuracy": 0.987460815047022,
+      "cross_ladder_pairs": 638
+    },
+    "by_subset": {
+      "mixed_sets": {
+        "questions": 120,
+        "model": {
+          "auc_across_states": 0.5,
+          "within_state_pair_accuracy": 0.5,
+          "within_state_pairs": 22,
+          "cross_ladder_pair_accuracy": null,
+          "cross_ladder_pairs": 0
+        },
+        "rule": {
+          "auc_across_states": 0.4904802500710429,
+          "within_state_pair_accuracy": 0.9090909090909091,
+          "within_state_pairs": 22,
+          "cross_ladder_pair_accuracy": null,
+          "cross_ladder_pairs": 0
+        }
+      },
+      "states_with_informative_statement": {
+        "questions": 152,
+        "model": {
+          "auc_across_states": 0.5,
+          "within_state_pair_accuracy": 0.5,
+          "within_state_pairs": 178,
+          "cross_ladder_pair_accuracy": 0.5,
+          "cross_ladder_pairs": 139
+        },
+        "rule": {
+          "auc_across_states": 0.4222052457346575,
+          "within_state_pair_accuracy": 0.9831460674157303,
+          "within_state_pairs": 178,
+          "cross_ladder_pair_accuracy": 0.9784172661870504,
+          "cross_ladder_pairs": 139
+        }
+      }
+    },
+    "spread": {
+      "sets_with_both_outcomes": 29,
+      "median_within_set": 0.0,
+      "overall_std": 0.0
+    },
+    "monotonicity": {
+      "price": {
+        "steps": 96,
+        "non_decreasing_rate": 1.0,
+        "responsive_rate": 0.0
+      },
+      "payment": {
+        "steps": 96,
+        "non_decreasing_rate": 1.0,
+        "responsive_rate": 0.0
+      },
+      "delivery": {
+        "steps": 72,
+        "non_decreasing_rate": 1.0,
+        "responsive_rate": 0.0
+      }
+    },
+    "calibration": {
+      "n": 456,
+      "base_rate": 0.5942982456140351,
+      "brier_base_rate": 0.2411078408741151,
+      "brier_raw": 0.25,
+      "brier_skill_raw": -0.036880422858282635,
+      "brier_platt_leave_one_state_out": 0.25455134952094727,
+      "brier_skill_platt": -0.05575724372170532,
+      "ece": 0.0942982456140351,
+      "bins": [
+        {
+          "bin": [
+            0.0,
+            0.2
+          ],
+          "n": 0
+        },
+        {
+          "bin": [
+            0.2,
+            0.4
+          ],
+          "n": 0
+        },
+        {
+          "bin": [
+            0.4,
+            0.6
+          ],
+          "n": 456,
+          "mean_p": 0.5,
+          "accept_rate": 0.5943
+        },
+        {
+          "bin": [
+            0.6,
+            0.8
+          ],
+          "n": 0
+        },
+        {
+          "bin": [
+            0.8,
+            1.0
+          ],
+          "n": 0
+        }
+      ]
+    },
+    "decision_value": {
+      "states": 24,
+      "mean_saving_model": 11790.416666666666,
+      "mean_saving_rule_heuristic": 114185.5,
+      "mean_saving_always_max_saving": 11790.416666666666,
+      "mean_saving_oracle": 156491.95833333334,
+      "gain_vs_rule_mean": -102395.08333333333,
+      "gain_vs_rule_ci90_by_state": [
+        -169946.54166666666,
+        -41614.208333333336
+      ]
+    },
+    "message_sensitivity": {
+      "pairs": 8,
+      "mean_effect": 0.0,
+      "positive_rate": 0.0
+    },
+    "invariance": {
+      "meaningful_for_this_backend": false,
+      "relabel": {
+        "n": 20,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      },
+      "term_order": {
+        "n": 20,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      },
+      "inverted": {
+        "n": 20,
+        "mean_abs_diff": 0.0,
+        "max_abs_diff": 0.0
+      }
+    },
+    "latency_ms_per_request": {
+      "min": 0.0,
+      "median": 0.0,
+      "max": 0.0
+    }
+  },
+  "verdict": {
+    "route": "C_or_D_candidate_scoring_weak_run_action_choice_probe",
+    "checks": {
+      "responsive": false,
+      "ranking_ok": false,
+      "ranking_beats_rule": false,
+      "threshold_across_states_ok": false,
+      "calibration_raw_ok": false,
+      "calibration_after_platt_ok": false,
+      "value_vs_rule_ok": false
+    },
+    "thresholds": {
+      "auc_across_states_min": 0.7,
+      "within_state_pair_accuracy_min": 0.7,
+      "cross_ladder_pair_accuracy_min": 0.6,
+      "median_spread_min": 0.1,
+      "overall_std_min": 0.1,
+      "brier_skill_min": 0.05,
+      "ece_max": 0.15,
+      "value_gain_ci_low_min": 0.0,
+      "invariance_mean_abs_diff_warn": 0.1
+    },
+    "counts_as_model_evidence": false,
+    "note": "CPU reference backend; pipeline check only, not model evidence"
+  }
+}

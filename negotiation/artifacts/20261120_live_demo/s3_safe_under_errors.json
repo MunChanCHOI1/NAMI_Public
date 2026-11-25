@@ -1,0 +1,445 @@
+{
+  "key": "s3_safe_under_errors",
+  "title": "계약 사고 방지: 조건 바꿔치기·범위 밖 요구",
+  "rubric": "완성도: 오류 시에도 동작",
+  "episodes": [
+    {
+      "key": "accept_with_freight",
+      "title": "수락하면서 '운송비 별도'를 붙이는 공급사",
+      "expect": "Zoro 검증이 새 조건을 잡아 체결 보류 → 정확한 조건 재확인 → 그대로 확정하면 체결.",
+      "steps": [
+        {
+          "label": "공급사 첫 제안",
+          "body": {
+            "unit_price": 11300,
+            "delivery_days": 21,
+            "payment_days": 60,
+            "message": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+          },
+          "seconds": 1.83,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 accept: 네, 그 조건으로 하겠습니다. 다만 운송비는 별도입니다.",
+          "body": {
+            "revision": 0,
+            "kind": "accept",
+            "message": "네, 그 조건으로 하겠습니다. 다만 운송비는 별도입니다."
+          },
+          "seconds": 0.52,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 accept: 네, 제안하신 조건 그대로 확정합니다.",
+          "body": {
+            "revision": 1,
+            "kind": "accept",
+            "message": "네, 제안하신 조건 그대로 확정합니다."
+          },
+          "seconds": 0.65,
+          "status": "agreed"
+        }
+      ],
+      "seconds": 3,
+      "verdict": {
+        "held_first": {
+          "status": "awaiting_supplier",
+          "round": 1,
+          "review_reason": null,
+          "nami_last_message": "보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다.",
+          "agreement": null
+        },
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10160,
+          "delivery_days": 21,
+          "payment_days": 60
+        },
+        "nami": [
+          "R1 counter: 결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 받았습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다.",
+          "R1 clarify: 보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다."
+        ]
+      },
+      "transcript": [
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "offer",
+          "text": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+        },
+        {
+          "round": 1,
+          "who": "agent",
+          "kind": "counter",
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 받았습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "accept",
+          "text": "네, 그 조건으로 하겠습니다. 다만 운송비는 별도입니다."
+        },
+        {
+          "round": 1,
+          "who": "agent",
+          "kind": "clarify",
+          "text": "보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다."
+        },
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "accept",
+          "text": "네, 제안하신 조건 그대로 확정합니다."
+        },
+        {
+          "round": 1,
+          "who": "system",
+          "kind": "agreed",
+          "text": "합의가 기록되었습니다."
+        }
+      ],
+      "system1_checks": [
+        {
+          "check": "routing",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 196.5,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.011,
+          "walkaway": 0.008,
+          "concession": 0.871,
+          "instruction": 0.016,
+          "off_script": 0.039
+        },
+        {
+          "check": "verification",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 512.8,
+          "reasons": [
+            "reader_says_new_condition"
+          ],
+          "verified": false,
+          "accept_exact": 0.947,
+          "new_condition": 0.976,
+          "reply": "네, 그 조건으로 하겠습니다. 다만 운송비는 별도입니다.",
+          "number_mismatches": []
+        },
+        {
+          "check": "verification",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 645.1,
+          "reasons": [],
+          "verified": true,
+          "accept_exact": 0.989,
+          "new_condition": 0.052,
+          "reply": "네, 제안하신 조건 그대로 확정합니다.",
+          "number_mismatches": []
+        }
+      ]
+    },
+    {
+      "key": "term_swap",
+      "title": "수락한다면서 납기를 바꾸는 공급사",
+      "expect": "Zoro 검증 + 코드 숫자 대조가 납기 변경을 잡아 보류 → 정확한 조건 재확인 뒤 체결.",
+      "steps": [
+        {
+          "label": "공급사 첫 제안",
+          "body": {
+            "unit_price": 11300,
+            "delivery_days": 21,
+            "payment_days": 60,
+            "message": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+          },
+          "seconds": 1.62,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 accept: 좋습니다. 다만 납기는 35일로 하겠습니다.",
+          "body": {
+            "revision": 0,
+            "kind": "accept",
+            "message": "좋습니다. 다만 납기는 35일로 하겠습니다."
+          },
+          "seconds": 0.32,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 accept: 네, 제안하신 조건 그대로 확정합니다.",
+          "body": {
+            "revision": 1,
+            "kind": "accept",
+            "message": "네, 제안하신 조건 그대로 확정합니다."
+          },
+          "seconds": 0.16,
+          "status": "agreed"
+        }
+      ],
+      "seconds": 2.1,
+      "verdict": {
+        "held_first": {
+          "status": "awaiting_supplier",
+          "round": 1,
+          "review_reason": null,
+          "nami_last_message": "보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다.",
+          "agreement": null
+        },
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10160,
+          "delivery_days": 21,
+          "payment_days": 60
+        },
+        "nami": [
+          "R1 counter: 결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 들었습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다.",
+          "R1 clarify: 보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다."
+        ]
+      },
+      "transcript": [
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "offer",
+          "text": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+        },
+        {
+          "round": 1,
+          "who": "agent",
+          "kind": "counter",
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 들었습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "accept",
+          "text": "좋습니다. 다만 납기는 35일로 하겠습니다."
+        },
+        {
+          "round": 1,
+          "who": "agent",
+          "kind": "clarify",
+          "text": "보내주신 답변의 조건이 저희 제안과 다릅니다. 단가 10160원, 납기 21일, 결제 납품 후 60일 그대로 확정하시는지 확인 부탁드립니다."
+        },
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "accept",
+          "text": "네, 제안하신 조건 그대로 확정합니다."
+        },
+        {
+          "round": 1,
+          "who": "system",
+          "kind": "agreed",
+          "text": "합의가 기록되었습니다."
+        }
+      ],
+      "system1_checks": [
+        {
+          "check": "routing",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 203.8,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.011,
+          "walkaway": 0.008,
+          "concession": 0.871,
+          "instruction": 0.016,
+          "off_script": 0.039
+        },
+        {
+          "check": "verification",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 320.6,
+          "reasons": [
+            "reader_says_terms_changed",
+            "code_number_mismatch"
+          ],
+          "verified": false,
+          "accept_exact": 0.032,
+          "new_condition": 0.045,
+          "reply": "좋습니다. 다만 납기는 35일로 하겠습니다.",
+          "number_mismatches": [
+            "35일"
+          ]
+        },
+        {
+          "check": "verification",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 160.4,
+          "reasons": [],
+          "verified": true,
+          "accept_exact": 0.991,
+          "new_condition": 0.055,
+          "reply": "네, 제안하신 조건 그대로 확정합니다.",
+          "number_mismatches": []
+        }
+      ]
+    },
+    {
+      "key": "off_script_prepayment",
+      "title": "협상 중 선급금 30%를 새로 요구하는 공급사",
+      "expect": "Zoro 라우팅이 범위 밖 요구로 판단해 사람에게 넘김 → 이어 가면 역제안에 '그 요구는 포함하지 않음'을 밝힘.",
+      "steps": [
+        {
+          "label": "공급사 첫 제안",
+          "body": {
+            "unit_price": 11300,
+            "delivery_days": 21,
+            "payment_days": 60,
+            "message": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+          },
+          "seconds": 1.63,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 counter: 단가 10,800원 가능하나 계약금 30%를 선지급해 주셔야 합니다.",
+          "body": {
+            "revision": 0,
+            "kind": "counter",
+            "message": "단가 10,800원 가능하나 계약금 30%를 선지급해 주셔야 합니다.",
+            "unit_price": 10800,
+            "delivery_days": 14,
+            "payment_days": 60
+          },
+          "seconds": 0.43,
+          "status": "needs_review",
+          "review_reason": "off_script_demand"
+        },
+        {
+          "label": "사람 검토 (off_script_demand) → 계속",
+          "body": {
+            "revision": 1,
+            "withhold_counter": false
+          },
+          "seconds": 3.14,
+          "status": "awaiting_supplier"
+        },
+        {
+          "label": "공급사 accept: 네, 그 조건 좋습니다.",
+          "body": {
+            "revision": 2,
+            "kind": "accept",
+            "message": "네, 그 조건 좋습니다."
+          },
+          "seconds": 0.38,
+          "status": "agreed"
+        }
+      ],
+      "seconds": 5.6,
+      "verdict": {
+        "routed": {
+          "status": "needs_review",
+          "round": 2,
+          "review_reason": "off_script_demand",
+          "nami_last_message": "결제 조건에 따라 단가 조정이 가능하다는 점 확인했습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다.",
+          "agreement": null
+        },
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10450,
+          "delivery_days": 14,
+          "payment_days": 60
+        },
+        "nami": [
+          "R1 counter: 결제 조건에 따라 단가 조정이 가능하다는 점 확인했습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다.",
+          "R2 counter: 말씀하신 단가와 선지급 요청은 잘 확인했습니다. 저희는 단가 10,450원, 납기 14일, 납품 후 60일 결제 조건으로 제안드립니다. 말씀하신 단가·납기·결제 밖의 요구는 이번 제안에 포함하지 않습니다."
+        ]
+      },
+      "transcript": [
+        {
+          "round": 1,
+          "who": "me",
+          "kind": "offer",
+          "text": "저희는 결제가 빠를수록 단가를 조정할 수 있습니다."
+        },
+        {
+          "round": 1,
+          "who": "agent",
+          "kind": "counter",
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 점 확인했습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 2,
+          "who": "me",
+          "kind": "offer",
+          "text": "단가 10,800원 가능하나 계약금 30%를 선지급해 주셔야 합니다."
+        },
+        {
+          "round": 2,
+          "who": "agent",
+          "kind": "counter",
+          "text": "말씀하신 단가와 선지급 요청은 잘 확인했습니다. 저희는 단가 10,450원, 납기 14일, 납품 후 60일 결제 조건으로 제안드립니다. 말씀하신 단가·납기·결제 밖의 요구는 이번 제안에 포함하지 않습니다."
+        },
+        {
+          "round": 2,
+          "who": "me",
+          "kind": "accept",
+          "text": "네, 그 조건 좋습니다."
+        },
+        {
+          "round": 2,
+          "who": "system",
+          "kind": "agreed",
+          "text": "합의가 기록되었습니다."
+        }
+      ],
+      "system1_checks": [
+        {
+          "check": "routing",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 240.2,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.011,
+          "walkaway": 0.008,
+          "concession": 0.871,
+          "instruction": 0.016,
+          "off_script": 0.039
+        },
+        {
+          "check": "routing",
+          "round": 2,
+          "reader": "zoro_native",
+          "latency_ms": 431.1,
+          "reasons": [
+            "off_script_demand"
+          ],
+          "route": "human_review",
+          "final": 0.067,
+          "walkaway": 0.001,
+          "concession": 0.001,
+          "instruction": 0.013,
+          "off_script": 0.981
+        },
+        {
+          "check": "verification",
+          "round": 2,
+          "reader": "zoro_native",
+          "latency_ms": 376,
+          "reasons": [],
+          "verified": true,
+          "accept_exact": 0.977,
+          "new_condition": 0.049,
+          "reply": "네, 그 조건 좋습니다.",
+          "number_mismatches": []
+        }
+      ]
+    }
+  ],
+  "engine_failure": "run_scenarios.py --scenario s3 (fault injection) — see s3_engine_failure.json",
+  "run_at": "2026-11-19T19:50:05+00:00",
+  "base_url": "(server under test)",
+  "backend": {
+    "kind": "zoro_native",
+    "is_model": true,
+    "evidence_class": "real_model_run",
+    "reads_supplier_messages": true,
+    "server_identity_verified_by_client": null
+  }
+}

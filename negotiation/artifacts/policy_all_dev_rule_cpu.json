@@ -1,0 +1,388 @@
+{
+  "backend": {
+    "kind": "rule_heuristic",
+    "is_model": false,
+    "assumed_supplier_rate": 0.1,
+    "assumed_expedite_per_day": 15000
+  },
+  "approver": "auto",
+  "evidence_class": "cpu_reference_not_model_evidence",
+  "summary": {
+    "cases": 16,
+    "status_counts": {
+      "agreed": 11,
+      "ended_alternative": 1,
+      "supplier_walked": 4
+    },
+    "mean_realized_saving_vs_alternative": 230451.9375,
+    "approval_cards": 19,
+    "authority_violations": 0,
+    "note": "policy behaviour check on development suppliers; no baseline comparison"
+  },
+  "cases": [
+    {
+      "case": {
+        "seed": 1000,
+        "style": "boulware",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10500,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 346247,
+        "rounds_used": 3,
+        "model_requests": 3,
+        "approval_cards": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1001,
+        "style": "boulware",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10610,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 236247,
+        "rounds_used": 4,
+        "model_requests": 3,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1002,
+        "style": "boulware",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "supplier_walked",
+        "agreement": null,
+        "realized_saving_vs_alternative": 0,
+        "rounds_used": 3,
+        "model_requests": 3,
+        "approval_cards": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1003,
+        "style": "boulware",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10580,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 266247,
+        "rounds_used": 4,
+        "model_requests": 3,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1004,
+        "style": "linear",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10640,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 206247,
+        "rounds_used": 4,
+        "model_requests": 3,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1005,
+        "style": "linear",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10660,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 186247,
+        "rounds_used": 4,
+        "model_requests": 4,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1006,
+        "style": "linear",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10450,
+          "delivery_days": 14,
+          "payment_days": 60
+        },
+        "realized_saving_vs_alternative": 499315,
+        "rounds_used": 2,
+        "model_requests": 2,
+        "approval_cards": 0,
+        "approvals_granted": 0,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1007,
+        "style": "linear",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10500,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 346247,
+        "rounds_used": 3,
+        "model_requests": 3,
+        "approval_cards": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1008,
+        "style": "deadline",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "supplier_walked",
+        "agreement": null,
+        "realized_saving_vs_alternative": 0,
+        "rounds_used": 2,
+        "model_requests": 2,
+        "approval_cards": 0,
+        "approvals_granted": 0,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1009,
+        "style": "deadline",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10350,
+          "delivery_days": 14,
+          "payment_days": 60
+        },
+        "realized_saving_vs_alternative": 598329,
+        "rounds_used": 2,
+        "model_requests": 1,
+        "approval_cards": 0,
+        "approvals_granted": 0,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1010,
+        "style": "deadline",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "supplier_walked",
+        "agreement": null,
+        "realized_saving_vs_alternative": 0,
+        "rounds_used": 3,
+        "model_requests": 3,
+        "approval_cards": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1011,
+        "style": "deadline",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10480,
+          "delivery_days": 14,
+          "payment_days": 60
+        },
+        "realized_saving_vs_alternative": 469611,
+        "rounds_used": 3,
+        "model_requests": 2,
+        "approval_cards": 0,
+        "approvals_granted": 0,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1012,
+        "style": "linear",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10500,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 346247,
+        "rounds_used": 3,
+        "model_requests": 3,
+        "approval_cards": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1013,
+        "style": "boulware",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": true
+      },
+      "outcome": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10660,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 186247,
+        "rounds_used": 4,
+        "model_requests": 4,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1014,
+        "style": "linear",
+        "payment_sensitive": false,
+        "reveal": false,
+        "feasible": false
+      },
+      "outcome": {
+        "status": "supplier_walked",
+        "agreement": null,
+        "realized_saving_vs_alternative": 0,
+        "rounds_used": 4,
+        "model_requests": 4,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    },
+    {
+      "case": {
+        "seed": 1015,
+        "style": "boulware",
+        "payment_sensitive": true,
+        "reveal": false,
+        "feasible": false
+      },
+      "outcome": {
+        "status": "ended_alternative",
+        "agreement": null,
+        "realized_saving_vs_alternative": 0,
+        "rounds_used": 5,
+        "model_requests": 5,
+        "approval_cards": 2,
+        "approvals_granted": 2,
+        "approvals_denied": 0,
+        "authority_violations": []
+      }
+    }
+  ]
+}

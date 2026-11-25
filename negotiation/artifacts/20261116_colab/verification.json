@@ -1,0 +1,31 @@
+{
+  "source_commit": "2f57d074c039646dde96ad1afa9e90247b87037a",
+  "probe_requests": 132,
+  "probe_questions": 540,
+  "dev_requests": 77,
+  "dev_questions": 410,
+  "all_request_hashes_match_native": true,
+  "all_status_ok": true,
+  "all_heads_loaded": true,
+  "dtypes": [
+    "fp16"
+  ],
+  "gpu_names": [
+    "Tesla T4"
+  ],
+  "max_cuda_allocated_bytes": 8629689344,
+  "gpu_after": "2026/11/16 07:42:16.374, Tesla T4, 0 MiB",
+  "source_zip_sha256": "f7209d90e47dbf47ebef0dd1483693aad25508866781d7263022c58c665eecbe",
+  "raw_files_sha256": {
+    "probe.json": "49b9545df9c73ac7f94dd4d11d5748c79251f1a656c796af63d583c4d3833c32",
+    "dev30.json": "842f22f1a049d7efb981d35b9d559cae6c5eda3612da4d1a785662b8955520b8",
+    "probe.json.calls.jsonl": "acf2aeb7924179c4e660f33a60581ced8db301f938391e6bab064e604c514a02",
+    "dev30.json.decisions.jsonl": "0b35fa1bb3e31ff481c6fb45a1e1893b0a21080a9cbbc25d45e18e32b9aaca72"
+  },
+  "interpretation": "One native real-model run per protocol on synthetic development data; not held-out or official SGLang evidence.",
+  "source_input_hashes_match_archive": true,
+  "official_source_hashes_match_pins": true,
+  "result_archive_bytes": 542161,
+  "result_archive_sha256": "9c5a2a1416bad2063f37d70e1979284d6b65a73a77b98003c7153c60375e9afb",
+  "timing_scope": "backend_call_seconds_total sums caller-measured prediction latency; excludes model load and full command wall time"
+}

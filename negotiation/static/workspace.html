@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NAMI · 구매 협상</title>
+<link rel="icon" type="image/png" href="/static/nami-logo-64.png">
+<script>
+  // Apply the chosen theme before the first paint: ?theme= wins, then the remembered choice.
+  (function () {
+    var themes = ["clean", "dark", "paper", "pixel"], pick = new URLSearchParams(location.search).get("theme");
+    if (themes.indexOf(pick) < 0) { try { pick = localStorage.getItem("nami-theme"); } catch (e) { pick = null; } }
+    if (themes.indexOf(pick) < 0) pick = "clean";
+    document.documentElement.setAttribute("data-theme", pick);
+  })();
+</script>
+<link rel="stylesheet" href="/static/workspace.css?v=20261120m">
+<script src="/static/workspace.js?v=20261120m" defer></script>
+</head>
+<body>
+<header class="appbar">
+  <div class="brand">
+    <img class="logo" src="/static/nami-logo.png" alt="" width="44" height="44">
+    <span class="wordmark">NAMI</span>
+  </div>
+  <span id="engine-chip" class="engine-chip">엔진 확인 중</span>
+  <label class="thread-pick"><span class="sr-only">협상 선택</span><select id="thread-select"></select></label>
+  <button id="new-thread" class="ghost" type="button">+ 새 협상</button>
+  <div class="appbar-right">
+    <span id="approvals-pill" class="approvals-pill" hidden></span>
+    <label class="theme-pick"><span>디자인</span>
+      <select id="theme-select" aria-label="디자인 선택">
+        <option value="clean">클린</option>
+        <option value="dark">다크</option>
+        <option value="paper">페이퍼</option>
+        <option value="pixel">픽셀</option>
+      </select>
+    </label>
+    <button id="open-evidence" class="ghost" type="button">성과 리포트</button>
+    <span class="synthetic">합성 데이터</span>
+  </div>
+</header>
+
+<div class="split">
+  <!-- Supplier side: only what the counterparty sees. -->
+  <section class="pane supplier-pane" aria-labelledby="sup-name">
+    <div class="pane-head">
+      <span class="pane-tag sup">공급사 화면</span>
+      <h2 id="sup-name">공급사</h2>
+      <span class="muted small">주고받은 메시지만 보입니다</span>
+    </div>
+    <div id="sup-timeline" class="timeline sup-timeline" aria-live="polite"></div>
+    <form id="supplier-form" class="composer supplier-composer" autocomplete="off" novalidate hidden>
+      <div class="composer-top">
+        <label class="term">단가<input id="in-price" type="number" min="1" max="1000000" step="1" inputmode="numeric"><span>원</span></label>
+        <label class="term">납기<input id="in-delivery" type="number" min="1" max="3650" step="1" inputmode="numeric"><span>일</span></label>
+        <label class="term">결제<input id="in-payment" type="number" min="0" max="3650" step="1" inputmode="numeric"><span>일 후</span></label>
+      </div>
+      <div class="send-row">
+        <input id="in-message" maxlength="200" placeholder="메시지 입력 (예: 단가 10,800원, 납기 14일 가능합니다)">
+        <button id="send" class="dark" type="submit">보내기</button>
+      </div>
+      <div id="quick" class="quick">
+        <button id="accept-offer" type="button" class="ghost">구매사 제안 수락</button>
+        <button id="walk-away" type="button" class="ghost">협상 종료</button>
+      </div>
+    </form>
+    <p id="sup-auto" class="composer sup-auto" hidden>시뮬레이션 공급사가 자동으로 응답합니다.</p>
+  </section>
+
+  <!-- Buyer side: our team and NAMI. -->
+  <section class="pane buyer-pane" aria-labelledby="thread-title">
+    <div class="buyer-main">
+      <div class="pane-head buyer-head">
+        <span class="pane-tag buy">구매팀 화면</span>
+        <h2 id="thread-title">불러오는 중</h2>
+        <span id="thread-sub" class="muted small"></span>
+        <div class="thread-meta">
+          <ol id="round-dots" class="round-dots" aria-label="라운드"></ol>
+          <span id="thread-status" class="status-pill"></span>
+        </div>
+      </div>
+      <div id="timeline" class="timeline" aria-live="polite"></div>
+      <div id="agent-composer" class="composer agent-composer">
+        <p id="composer-status" class="composer-status"></p>
+        <button id="step" class="secondary" type="button">한 단계</button>
+        <button id="run" class="primary" type="button">NAMI에게 맡기기</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </div>
+
+    <aside class="side" aria-label="승인과 협상 기준">
+      <section id="approval" class="panel approval" hidden>
+        <span class="panel-tag warn">승인 요청</span>
+        <h3 id="approval-question"></h3>
+        <div id="approval-terms"></div>
+        <p id="approval-limit" class="limit-line"></p>
+        <dl id="approval-values" class="values"></dl>
+        <div class="approval-actions">
+          <button id="approve" class="primary" type="button">승인</button>
+          <button id="deny" class="secondary" type="button">거절</button>
+        </div>
+        <p class="muted small">이 조건에만 적용 · 보내기 직전 다시 검사</p>
+      </section>
+
+      <section id="review" class="panel review" hidden>
+        <span id="review-tag" class="panel-tag danger"></span>
+        <h3 id="review-title"></h3>
+        <p id="review-text" class="small"></p>
+        <p id="review-error" class="mono small muted"></p>
+        <button id="withhold" class="primary" type="button" hidden>역제안 없이 수락·종료만 비교</button>
+        <button id="retry" class="primary" type="button">다시 판단 요청</button>
+      </section>
+
+      <section id="result" class="panel result" hidden>
+        <span id="result-tag" class="panel-tag ok"></span>
+        <h3 id="result-title"></h3>
+        <dl id="result-values" class="values"></dl>
+      </section>
+
+      <section class="panel criteria">
+        <h4>내 협상 기준</h4>
+        <p class="muted small">NAMI는 이 기준 안에서만 협상합니다.</p>
+        <div id="ladder" class="ladder" aria-hidden="true"></div>
+        <form id="criteria-form" class="fields" novalidate>
+          <label class="field"><span class="field-name">목표 단가</span><input id="c-target" type="number" step="10" min="1000" max="100000"><span class="unit">원</span></label>
+          <label class="field"><span class="field-name">내 단가 한도<small>넘으면 승인 요청</small></span><input id="c-limit" type="number" step="10" min="1000" max="100000"><span class="unit">원</span></label>
+          <label class="field"><span class="field-name">대안 견적<small>이보다 비싸면 합의 안 함</small></span><input id="c-alt" type="number" step="10" min="1000" max="100000"><span class="unit">원</span></label>
+          <label class="field"><span class="field-name">납기 상한</span><input id="c-delivery" type="number" step="1" min="1" max="30"><span class="unit">일</span></label>
+          <label class="field"><span class="field-name">결제 최소<small>납품 후</small></span><input id="c-payment" type="number" step="1" min="0" max="120"><span class="unit">일</span></label>
+          <p id="criteria-error" class="field-error" hidden></p>
+          <button id="apply-criteria" class="secondary" type="submit" disabled>이 기준으로 새로 시작</button>
+        </form>
+      </section>
+    </aside>
+  </section>
+</div>
+
+<div id="evidence" class="overlay" hidden>
+  <section class="report" role="dialog" aria-modal="true" aria-labelledby="report-title" tabindex="-1">
+    <div class="report-head">
+      <div>
+        <h2 id="report-title">성과 리포트</h2>
+        <p id="report-scope" class="muted small"></p>
+      </div>
+      <button id="close-evidence" class="ghost" type="button">닫기</button>
+    </div>
+    <div id="report-tiles" class="report-tiles"></div>
+    <h4>평균 실현 절감 (대안 견적 대비)</h4>
+    <div id="report-bars" class="report-bars"></div>
+    <div id="report-diffs" class="report-diffs"></div>
+    <p class="muted small">합성 공급사 · 개발 30건 1회 실행 · 수락 추정은 보정된 확률이 아닙니다.</p>
+  </section>
+</div>
+<p id="notice" class="sr-only" aria-live="polite"></p>
+</body>
+</html>

@@ -1,0 +1,8 @@
+NAMI · Negotiation Agent for Maximum Impact
+Copyright 2026 NAMI team
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository does not include Zoro-1 model weights or the official Trida/Zoro sources.
+scripts/fetch_official_sources.py and scripts/gpu_setup.py download them at run time from
+their own repositories, under their own licenses.

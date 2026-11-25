@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "model_id": "trillionlabs/Zoro-1",
+  "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+  "source_repository": "trillion-labs/trida-stack",
+  "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+  "official_source_files": {
+    "train/tools/export_kev_checkpoint.py": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+    "inference/zoro-1/decide_request.py": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+    "inference/zoro-1/decide_engine.py": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30"
+  },
+  "official_server_files": {
+    "inference/zoro-1/serve_decide.py": "6a009a3511cbd63b379ed5243dcebcd38e0ee25e0e9758df72a59ca289e54233"
+  },
+  "transformers_candidate_version": "5.17.0",
+  "real_zoro_gpu_execution_verified": true,
+  "official_sglang_parity_verified": false,
+  "temperature_policy": "original_checkpoint/temperature.json:text; absent => raw 1.0; explicit override must be recorded",
+  "official_decide_server_execution_verified": false
+}

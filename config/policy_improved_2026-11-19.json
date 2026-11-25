@@ -1,0 +1,10 @@
+{
+  "policy": {
+    "aspiration_exponent": 2.0,
+    "final_accept_scale": 0.0,
+    "final_accept_scale_recomposed": 0.5,
+    "cap_next_offer_at_ask": true
+  },
+  "estimates": {"acceptance_source": "model", "final_source": "model"},
+  "note": "CPU-selected on dev-1100..1299, confirmed once on dev-1300..1599 (2026-11-19). Not model evidence."
+}

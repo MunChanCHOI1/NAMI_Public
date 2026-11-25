@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nami"
+version = "0.1.0"
+description = "NAMI (Negotiation Agent for Maximum Impact): a synthetic buyer-side negotiation agent that uses Zoro-1 only for estimates (Trillion Track 1)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi==0.141.1",
+  "httpx==0.28.1",
+  "uvicorn==0.52.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0"]
+llm = ["anthropic==2.10.0"]  # optional: --llm claude in run_language_eval.py and run_email_negotiation.py
+
+# src/ holds only the shared Zoro-1 adapter (package name kept as in the original repository).
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "negotiation/tests"]
+addopts = "-ra --import-mode=importlib"

@@ -1,0 +1,307 @@
+{
+  "key": "s1_renewal_auto",
+  "title": "계약 갱신 자동 타결 + 권한 밖 조건의 정확한 승인",
+  "rubric": "완성도: 목표 달성 · 창의성: 실제 적용 가능성·사업화",
+  "episodes": [
+    {
+      "key": "renewal_auto",
+      "title": "담당자 권한 안에서 끝나는 갱신 협상",
+      "expect": "사람 개입 없이 권한 안에서 합의. Zoro가 공급사 발언을 읽고, 수락이 보낸 조건 그대로인지 검증 후 체결.",
+      "steps": [
+        {
+          "label": "협상 시작",
+          "body": {
+            "mode": "simulated",
+            "preset": "start",
+            "scenario": "within_authority"
+          },
+          "seconds": 0.2,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 0
+          },
+          "seconds": 4.31,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 1
+          },
+          "seconds": 4.14,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 2
+          },
+          "seconds": 1.99,
+          "status": "agreed"
+        }
+      ],
+      "seconds": 10.6,
+      "verdict": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10590,
+          "delivery_days": 14,
+          "payment_days": 60
+        },
+        "realized_saving_vs_alternative": 360696,
+        "saving_vs_first_offer": 763786,
+        "rounds_used": 3,
+        "human_touches": 0,
+        "approvals_granted": 0,
+        "approvals_denied": 0,
+        "authority_violations": [],
+        "engine_time_ms": 3895,
+        "model_requests": 2
+      },
+      "transcript": [
+        {
+          "round": 1,
+          "kind": null,
+          "text": "검토 요청 주신 내용 잘 확인했습니다. 저희는 단가 10,300원, 납기 14일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 2,
+          "kind": null,
+          "text": "검토 요청 주신 조건 잘 받았습니다. 저희는 단가 10,450원, 납기 14일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 3,
+          "kind": null,
+          "text": "검토 요청하신 조건 확인했습니다. 단가 10,590원, 납기 14일, 납품 후 60일 결제로 확정하겠습니다."
+        }
+      ],
+      "system1_checks": [
+        {
+          "check": "routing",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 200,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.004,
+          "walkaway": 0.001,
+          "concession": 0.019,
+          "instruction": 0.029,
+          "off_script": 0.003
+        },
+        {
+          "check": "routing",
+          "round": 2,
+          "reader": "zoro_native",
+          "latency_ms": 1115.6,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.029,
+          "walkaway": 0.001,
+          "concession": 0.005,
+          "instruction": 0.002,
+          "off_script": 0.001
+        },
+        {
+          "check": "routing",
+          "round": 3,
+          "reader": "zoro_native",
+          "latency_ms": 1157.5,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.214,
+          "walkaway": 0.001,
+          "concession": 0.002,
+          "instruction": 0.004,
+          "off_script": 0.001
+        }
+      ]
+    },
+    {
+      "key": "exact_approval",
+      "title": "결제를 앞당기면 단가를 내리겠다는 공급사",
+      "expect": "권한 밖(결제 기간) 조건은 승인 카드에서 멈춤. 승인 전 전송 0건, 승인한 바로 그 조건만 전송·체결.",
+      "steps": [
+        {
+          "label": "협상 시작",
+          "body": {
+            "mode": "simulated",
+            "preset": "start",
+            "scenario": "payment_tradeoff"
+          },
+          "seconds": 0.26,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 0
+          },
+          "seconds": 2.29,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 1
+          },
+          "seconds": 2.96,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 2
+          },
+          "seconds": 4.28,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 3
+          },
+          "seconds": 1,
+          "status": "awaiting_approval"
+        },
+        {
+          "label": "승인 카드 → approve",
+          "body": {
+            "revision": 4,
+            "request_id": "req-4-34f40c9a72e2390f",
+            "terms_version": "34f40c9a72e2390f",
+            "decision": "approve"
+          },
+          "seconds": 0.01,
+          "status": "active"
+        },
+        {
+          "label": "NAMI 한 단계",
+          "body": {
+            "revision": 5
+          },
+          "seconds": 3.26,
+          "status": "agreed"
+        }
+      ],
+      "seconds": 14.1,
+      "verdict": {
+        "status": "agreed",
+        "agreement": {
+          "unit_price": 10660,
+          "delivery_days": 14,
+          "payment_days": 0
+        },
+        "realized_saving_vs_alternative": 186247,
+        "saving_vs_first_offer": 1252729,
+        "rounds_used": 4,
+        "human_touches": 1,
+        "approvals_granted": 1,
+        "approvals_denied": 0,
+        "authority_violations": [],
+        "engine_time_ms": 7107.5,
+        "model_requests": 4
+      },
+      "transcript": [
+        {
+          "round": 1,
+          "kind": null,
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 들었습니다. 단가 10,160원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 2,
+          "kind": null,
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 받았습니다. 단가 10,310원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 3,
+          "kind": null,
+          "text": "결제 조건에 따라 단가 조정이 가능하다는 말씀 잘 들었습니다. 단가 10,470원, 납기 21일, 납품 후 60일 결제 조건으로 제안드립니다."
+        },
+        {
+          "round": 4,
+          "kind": null,
+          "text": "빠른 결제 시 단가 조정 여지가 있다는 말씀 잘 들었습니다. 단가 10,660원, 납기 14일, 납품 후 0일 결제 조건으로 제안드립니다."
+        }
+      ],
+      "system1_checks": [
+        {
+          "check": "routing",
+          "round": 1,
+          "reader": "zoro_native",
+          "latency_ms": 253.3,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.057,
+          "walkaway": 0.013,
+          "concession": 0.789,
+          "instruction": 0.011,
+          "off_script": 0.06
+        },
+        {
+          "check": "routing",
+          "round": 2,
+          "reader": "zoro_native",
+          "latency_ms": 722.7,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.045,
+          "walkaway": 0.003,
+          "concession": 0.074,
+          "instruction": 0.008,
+          "off_script": 0.037
+        },
+        {
+          "check": "routing",
+          "round": 3,
+          "reader": "zoro_native",
+          "latency_ms": 1180.3,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.043,
+          "walkaway": 0.001,
+          "concession": 0.094,
+          "instruction": 0.006,
+          "off_script": 0.025
+        },
+        {
+          "check": "routing",
+          "round": 4,
+          "reader": "zoro_native",
+          "latency_ms": 1230,
+          "reasons": [],
+          "route": "continue",
+          "final": 0.069,
+          "walkaway": 0.001,
+          "concession": 0.187,
+          "instruction": 0.008,
+          "off_script": 0.029
+        },
+        {
+          "check": "verification",
+          "round": 4,
+          "reader": "zoro_native",
+          "latency_ms": 791.7,
+          "reasons": [],
+          "verified": true,
+          "accept_exact": 0.995,
+          "new_condition": 0.033,
+          "reply": "제안하신 조건으로 진행하겠습니다.",
+          "number_mismatches": []
+        }
+      ]
+    }
+  ],
+  "run_at": "2026-11-19T19:49:25+00:00",
+  "base_url": "(server under test)",
+  "backend": {
+    "kind": "zoro_native",
+    "is_model": true,
+    "evidence_class": "real_model_run",
+    "reads_supplier_messages": true,
+    "server_identity_verified_by_client": null
+  }
+}

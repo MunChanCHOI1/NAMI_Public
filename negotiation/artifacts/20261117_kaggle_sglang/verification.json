@@ -1,0 +1,920 @@
+{
+  "verified_at_date": "2026-11-17",
+  "platform": "Kaggle",
+  "comparison_recomputed_and_equal": true,
+  "native_inputs_are_new_same_kaggle_runs": true,
+  "source_manifest_verified": true,
+  "smoke_requests_per_backend": 2,
+  "smoke_questions_per_backend": 6,
+  "server_shutdown": {
+    "gpu_processes_after": "",
+    "gpu_after": "Tesla T4, 3 MiB\nTesla T4, 0 MiB\n",
+    "server_log_sha256": "db93c2f8a66cd526978e0f68c846a7ad78867ba985e855246f83e108e29535d8"
+  },
+  "result_archive_sha256": "62eac450845ddd960082e4e22569c337cf2bddfbebabd14850dff3db6d941af2",
+  "result_files_sha256": {
+    "command-25a11a12.log": "d8916368fb741c04de6d912a9cc745c6c4407f837297e5d4cee38ce62ec76214",
+    "command-51713d7e.log": "4a667050ed3fb7fa1bb5a6e78c187d1c527e1845c263154001cbcb64e9a611fa",
+    "command-5902d556.log": "4ec5856235d4c7e3b3694b4c82a06b7f38c5e8d23509b33c6af88de306f9fc39",
+    "command-65e6ce5c.log": "3c07b30e45eb34012cdf85a34e179219e18dba63c06da8d0c6647568ddb53e55",
+    "command-6c13e9e9.log": "53e4ada7b1928036af18f3bde35f152b815df4f039c29786bef7dcc04f34ec3f",
+    "command-86a3f450.log": "2365bea71467665b1dde0aa64a1182311adfa40832112a51184cd4ac0d9064ad",
+    "command-92e8c930.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command-b1d4341e.log": "ca8186634fefd5e879fa4230f8400b471bd90ea5ca75e0a08a5b542972e8c2c6",
+    "command-b5793b0f.log": "c618544a91966bbcc53f18a320c9bccaf4cc710663132b207fadc7a43c5edcd4",
+    "command-b7eb823e.log": "824a0309918db9c77ad36ba87fbd1b6cf8166ceb5e0f227894539597d8c5a5fe",
+    "command-c6b095bc.log": "84707a3676f70a23c9ab1cb403b50a465c8167ea79f64b554aeba72a67023cca",
+    "command-c9df69b6.log": "4f19e1f923d3333454ef9f9ea5143130c51440100b9ca117f5fc17d0816177c8",
+    "command-f1ee480c.log": "29d1993d7d7d9ac72d66a7dc5ddc695f602f3b206dec0e590978efc9fd5edd75",
+    "command-f40bbb1b.log": "758afe671a0f2d67e0e3203bb896dd7e09aeffd1013d30cef2ef65868c5b947c",
+    "commands.jsonl": "2cb779c74893c09c0c7e9773358fd0b9662fb997bbbd180c0d61587cf2a12e1c",
+    "source.json": "7510cbf698d827d20570ef5dc5b2b91f14c9e294f53af1a14f67ee0bfee72a3c",
+    "source_manifest.json": "89a2590d7f9dec2d309b37963c24e841609829109b23d26f4a6941c2cdec0e4e",
+    "dev30-8f7cdc6b\\result.json": "39b682ff417be653537bc048aa956d58aa27f546896bcdaf9a17ef1f3df995a6",
+    "dev30-8f7cdc6b\\result.json.decisions.jsonl": "0e5168c43938c7f1efab7a57a6e455e58000beebf5f3961dd704432d0952cc70",
+    "probe-4f1138b3\\result.json": "0a4c03dc91e139c1ccd3a42ba399a6a602b35975efb43798e2c26e9f7f06c718",
+    "probe-4f1138b3\\result.json.calls.jsonl": "b1f12c1ae6ef4b18dde1a5a2c8c1da0f11e524403a6c81d49272fb5208af4ddb",
+    "setup-install\\setup_report.json": "4bfecc8ac8bb5665397a380a81b9994fa937d0c9fbf33774673ec5b52d6d4b1d",
+    "setup-model\\export_process.log": "50735088b552aee2fce61375afe5cb099a4db35f9e4f2767d7f4a3cb2f4aedbb",
+    "setup-model\\setup_report.json": "09d02f83efb0f6c6a2d81a84b53b281b9b0669c289a44a9de8f5bf0ac015b525",
+    "sglang-b00aa16b\\bridge_manifest.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "sglang-b00aa16b\\compare_backends.py": "8d2549e441c1177edd2d8dee6d4a009a94312ed9cbb69271e5668bfbef226eea",
+    "sglang-b00aa16b\\comparison.json": "45af12b248d915294386e1b1b581234388fd4d6699ed59cd94b65b013e454179",
+    "sglang-b00aa16b\\comparison_plan.json": "1ec1191d09149383ffe7fdcff46520a0dd2338f2de27968207c6b8a45c199d59",
+    "sglang-b00aa16b\\environment.json": "fb3c4707bbf8c4b4a531ce47c9a9a5dc660b250e49e5230608a596f19c09320a",
+    "sglang-b00aa16b\\failed_start_1.json": "605c034f2e3672b4a964d7779efb188888b49f8b7d464a4859649e77108385fd",
+    "sglang-b00aa16b\\failed_start_1.log": "38b0889cc3600807d4d7a8abc063234bb371fe8d0a37a01547aec47c99719d26",
+    "sglang-b00aa16b\\kaggle_cuda_linker.json": "db95fa67ca0289b6667dcf2907f6315dfaf02cb06e6845ed95396ae463b9697c",
+    "sglang-b00aa16b\\native_dev30.json": "39b682ff417be653537bc048aa956d58aa27f546896bcdaf9a17ef1f3df995a6",
+    "sglang-b00aa16b\\native_probe.json": "0a4c03dc91e139c1ccd3a42ba399a6a602b35975efb43798e2c26e9f7f06c718",
+    "sglang-b00aa16b\\server.log": "db93c2f8a66cd526978e0f68c846a7ad78867ba985e855246f83e108e29535d8",
+    "sglang-b00aa16b\\server_evidence.json": "5f47cb8d2d680db35dd7a6b3635c664bc4245ec88004f008ea2c76742434f2d0",
+    "sglang-b00aa16b\\sglang_environment.txt": "a1f40f579eb1ff3f1bad02b4461e823bace222876fcdc1de769953e18f3d8029",
+    "sglang-b00aa16b\\shutdown.json": "f80de358e27981a649599629591fc943860a4dbed51131e661dc5472c30e5539",
+    "sglang-b00aa16b\\start_result.json": "c3d2b2b50fce58e402df2dd0bf04dcbf47149a2d6924a616103fe5b9fba8524f",
+    "smoke-d20b727e\\result.json": "245b2b7cc52f3b3eb41738d50b693df31cb9a34c2c87f49bd6db69bae8ea11f6",
+    "smoke-d20b727e\\result.json.calls.jsonl": "3135f3376f13d126d7de1aa0873c912ba1d7aa6f46f98dcb6816206a6cb8cc6c",
+    "sglang-b00aa16b\\dev30-797e2d73\\result.json": "3bf3dd00b0fb0f2e03fc8db2b9031e5f852489b9a3d684a13926ecfb9c1ac64e",
+    "sglang-b00aa16b\\dev30-797e2d73\\result.json.decisions.jsonl": "27c939a5a1a4dc9c65f0df24a4185f317c6a6f5faa2647328d47f68f3f123292",
+    "sglang-b00aa16b\\probe-901cbfe9\\result.json": "3e6e66cda0200de38560ccc17e028d0e79c744a56f54422c9c558d5cc8ce0733",
+    "sglang-b00aa16b\\probe-901cbfe9\\result.json.calls.jsonl": "8f699cd0d9ac442a5c003aeeb7c66b45f5080d019c01affc86b3c9d30808d9e2",
+    "sglang-b00aa16b\\smoke-c6613694\\result.json": "46ac55bb9ce230babe956895abc355a4834034fd098feb36005b15b74ffc89b6",
+    "sglang-b00aa16b\\smoke-c6613694\\result.json.calls.jsonl": "f12cb85a36ebbae117fc65f2858ad356b349e9d0dc4e03ac222fd27de8083618"
+  },
+  "cpu_suite": {
+    "passed": 276,
+    "skipped": 1,
+    "subtests_passed": 6,
+    "seconds": 12.81
+  },
+  "comparison": {
+    "scope": "one execution per backend on the same synthetic development inputs",
+    "heldout_executed": false,
+    "official_server_evidence": {
+      "launch": {
+        "command": [
+          "/kaggle/temp/negotiation-a961edd3f2ec/.cache/venv-sglang-py312/bin/python",
+          "serve_decide.py",
+          "/kaggle/temp/negotiation-a961edd3f2ec/.model-cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "30001",
+          "--mem-fraction",
+          "0.8",
+          "--context-length",
+          "16384"
+        ],
+        "checkpoint": "/kaggle/temp/negotiation-a961edd3f2ec/.model-cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+        "port": 30001,
+        "venv_bin": "/kaggle/temp/negotiation-a961edd3f2ec/.cache/venv-sglang-py312/bin",
+        "SGLANG_MAMBA_CONV_DTYPE": "float16",
+        "seconds_until_ready": 255.1,
+        "health": {
+          "ok": true,
+          "model": "766c5522cfb7df47dc9546df20fe3ce6efe6067c"
+        },
+        "exit_code_if_stopped": null
+      },
+      "environment": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "sglang": "0.5.22",
+        "torch": "2.14.1",
+        "transformers": "5.19.0"
+      },
+      "gpu_before": "Tesla T4, 580.178.04, 0 MiB, 15360 MiB\nTesla T4, 580.178.04, 0 MiB, 15360 MiB\n",
+      "official_source_sha256": {
+        "train/tools/export_kev_checkpoint.py": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "inference/zoro-1/decide_request.py": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "inference/zoro-1/decide_engine.py": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "inference/zoro-1/serve_decide.py": "6a009a3511cbd63b379ed5243dcebcd38e0ee25e0e9758df72a59ca289e54233"
+      },
+      "checkpoint_head_sha256": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db",
+      "bridge_manifest": {},
+      "original_checkpoint": "/kaggle/temp/negotiation-a961edd3f2ec/.model-cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "reasoning": false,
+      "decision_temperature": 1.0,
+      "cuda_linker": {
+        "platform": "Kaggle",
+        "fix": "Add existing driver directory to subprocess compiler LIBRARY_PATH",
+        "driver_library": "/usr/local/nvidia/lib64/libcuda.so.580.178.04",
+        "driver_library_sha256": "dcdf334aeb177c95b3385b797c9b871d03a287895713c6d107f79096b0985aa9",
+        "previous_library_path": "/usr/local/cuda/lib64/stubs",
+        "library_path": "/usr/local/nvidia/lib64:/usr/local/cuda/lib64/stubs",
+        "link_command": [
+          "c++",
+          "-shared",
+          "-fPIC",
+          "-x",
+          "c++",
+          "-",
+          "-lcuda",
+          "-o",
+          "/kaggle/temp/negotiation-a961edd3f2ec/.cache/cuda-link-check.so"
+        ],
+        "link_exit_code": 0,
+        "official_model_and_source_unchanged": true
+      }
+    },
+    "probe": {
+      "native_requests": 132,
+      "official_requests": 132,
+      "matched_request_occurrences": 132,
+      "native_only_requests": 0,
+      "official_only_requests": 0,
+      "matched_questions": 540,
+      "maximum_absolute_probability_difference": 0.006846634006500207,
+      "mean_absolute_probability_difference": 0.0009569782628588107,
+      "diagnostic_absolute_tolerance": 0.01,
+      "questions_exceeding_tolerance": 0,
+      "all_inputs_matched_and_within_tolerance": true,
+      "threshold_0_5_agreements": 540,
+      "threshold_0_5_disagreements": [],
+      "native_backend_seconds": 157.11010000000002,
+      "official_backend_seconds": 431.24109999999996
+    },
+    "dev_requests": {
+      "native_requests": 77,
+      "official_requests": 77,
+      "matched_request_occurrences": 73,
+      "native_only_requests": 4,
+      "official_only_requests": 4,
+      "matched_questions": 394,
+      "maximum_absolute_probability_difference": 0.005163194561004669,
+      "mean_absolute_probability_difference": 0.0009271298434377318,
+      "diagnostic_absolute_tolerance": 0.01,
+      "questions_exceeding_tolerance": 0,
+      "all_inputs_matched_and_within_tolerance": false,
+      "threshold_0_5_agreements": 394,
+      "threshold_0_5_disagreements": [],
+      "native_backend_seconds": 133.1718,
+      "official_backend_seconds": 468.812
+    },
+    "development": {
+      "cases": 30,
+      "same_decision_paths": 28,
+      "same_executed_paths": 28,
+      "same_outcomes": 30,
+      "mean_saving_difference": 0.0,
+      "rows": [
+        {
+          "case_id": "dev-1100",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 497935,
+          "official_saving": 497935,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1101",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 398921,
+          "official_saving": 398921,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1102",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 186247,
+          "official_saving": 186247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1103",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 428625,
+          "official_saving": 428625,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1104",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 496247,
+          "official_saving": 496247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1105",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1106",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1107",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1108",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1109",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1110",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1111",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 339513,
+          "official_saving": 339513,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1112",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 339513,
+          "official_saving": 339513,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1113",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1114",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1115",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1116",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1117",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 390400,
+          "official_saving": 390400,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1118",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 499315,
+          "official_saving": 499315,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1119",
+          "same_decisions_and_terms": false,
+          "same_executed_actions": false,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1120",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1121",
+          "same_decisions_and_terms": false,
+          "same_executed_actions": false,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1122",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 186247,
+          "official_saving": 186247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1123",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 346247,
+          "official_saving": 346247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1124",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1125",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 497935,
+          "official_saving": 497935,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1126",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 537540,
+          "official_saving": 537540,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1127",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 346247,
+          "official_saving": 346247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1128",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1129",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 398921,
+          "official_saving": 398921,
+          "saving_difference": 0
+        }
+      ]
+    },
+    "official_probe_verdict": "C_or_D_candidate_scoring_weak_run_action_choice_probe",
+    "official_dev_agent": {
+      "cases": 30,
+      "complete": true,
+      "needs_review": 0,
+      "mean_realized_saving": 306426.4666666667,
+      "mean_net_saving_after_process_costs": 267093.13333333336,
+      "authority_violations": 0,
+      "agreements_not_better_than_alternative": 0,
+      "feasible_cases": {
+        "n": 25,
+        "agreement_rate": 0.88,
+        "supplier_walked": 3,
+        "mean_capture_of_attainable": 0.5425874354604565,
+        "target_met_rate": 0.12
+      },
+      "infeasible_cases": {
+        "n": 5,
+        "ended_without_agreement_rate": 1.0,
+        "mean_rounds_used": 3.2,
+        "approval_cards": 4
+      },
+      "process": {
+        "mean_rounds_used": 2.6666666666666665,
+        "approval_cards": 15,
+        "model_requests": 77,
+        "latency_ms_per_request": {
+          "median": 5970.0,
+          "max": 9988.6
+        }
+      },
+      "recovery_after_rejected_counter": {
+        "instances": 4,
+        "final_saving_over_saving_given_up": 1.4437185979251188
+      },
+      "final_offer_estimates": {
+        "n": 76,
+        "source": [
+          "backend_estimate"
+        ],
+        "base_rate": 0.15789473684210525,
+        "auc": 0.5703125,
+        "brier": 0.21872054342105263,
+        "brier_base_rate": 0.13296398891966757,
+        "brier_skill": -0.6449607536458335,
+        "note": "rounds before the public last round, on states this policy reached"
+      },
+      "acceptance_estimates": {
+        "n": 337,
+        "base_rate": 0.2195845697329377,
+        "auc": 0.6647569622854794,
+        "brier": 0.17254855961424334,
+        "brier_base_rate": 0.1713671864681383,
+        "brier_skill": -0.006893811881101719,
+        "ece": 0.102613353115727,
+        "bins": [
+          {
+            "bin": [
+              0.0,
+              0.2
+            ],
+            "n": 310,
+            "mean_p": 0.1031,
+            "accept_rate": 0.1935
+          },
+          {
+            "bin": [
+              0.2,
+              0.4
+            ],
+            "n": 25,
+            "mean_p": 0.2653,
+            "accept_rate": 0.52
+          },
+          {
+            "bin": [
+              0.4,
+              0.6
+            ],
+            "n": 2,
+            "mean_p": 0.4109,
+            "accept_rate": 0.5
+          },
+          {
+            "bin": [
+              0.6,
+              0.8
+            ],
+            "n": 0
+          },
+          {
+            "bin": [
+              0.8,
+              1.0
+            ],
+            "n": 0
+          }
+        ],
+        "note": "scored only on states this policy reached"
+      }
+    },
+    "official_dev_minus_rule": {
+      "realized_saving": {
+        "metric": "realized_saving",
+        "cases": 30,
+        "mean_difference": 22162.8,
+        "ci90": [
+          -16307.4,
+          62439.9
+        ],
+        "wins": 7,
+        "ties": 12,
+        "losses": 11
+      },
+      "net_saving": {
+        "metric": "net_saving",
+        "cases": 30,
+        "mean_difference": 27162.8,
+        "ci90": [
+          -11886.4,
+          67025.13333333333
+        ],
+        "wins": 10,
+        "ties": 10,
+        "losses": 10
+      }
+    },
+    "source_hashes_verified": true,
+    "request_hashes_verified": true,
+    "input_files_sha256": {
+      "native_probe": "0a4c03dc91e139c1ccd3a42ba399a6a602b35975efb43798e2c26e9f7f06c718",
+      "native_dev": "39b682ff417be653537bc048aa956d58aa27f546896bcdaf9a17ef1f3df995a6",
+      "official_probe": "3e6e66cda0200de38560ccc17e028d0e79c744a56f54422c9c558d5cc8ce0733",
+      "official_dev": "3bf3dd00b0fb0f2e03fc8db2b9031e5f852489b9a3d684a13926ecfb9c1ac64e",
+      "server_evidence": "5f47cb8d2d680db35dd7a6b3635c664bc4245ec88004f008ea2c76742434f2d0"
+    },
+    "limitations": [
+      "Official noul values are rounded to four decimals.",
+      "Latency includes warmup and different execution strategies; it is not a controlled benchmark.",
+      "Matching these development inputs does not establish general numerical or policy equivalence."
+    ]
+  },
+  "previous_colab_native_comparison": {
+    "notice": "Cross-environment reproduction; Colab and Kaggle have different Torch versions.",
+    "probe": {
+      "native_requests": 132,
+      "official_requests": 132,
+      "matched_request_occurrences": 132,
+      "native_only_requests": 0,
+      "official_only_requests": 0,
+      "matched_questions": 540,
+      "maximum_absolute_probability_difference": 0.0,
+      "mean_absolute_probability_difference": 0.0,
+      "diagnostic_absolute_tolerance": 0.01,
+      "questions_exceeding_tolerance": 0,
+      "all_inputs_matched_and_within_tolerance": true,
+      "threshold_0_5_agreements": 540,
+      "threshold_0_5_disagreements": [],
+      "native_backend_seconds": 148.7466,
+      "official_backend_seconds": 157.11010000000002
+    },
+    "development": {
+      "cases": 30,
+      "same_decision_paths": 30,
+      "same_executed_paths": 30,
+      "same_outcomes": 30,
+      "mean_saving_difference": 0.0,
+      "rows": [
+        {
+          "case_id": "dev-1100",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 497935,
+          "official_saving": 497935,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1101",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 398921,
+          "official_saving": 398921,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1102",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 186247,
+          "official_saving": 186247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1103",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 428625,
+          "official_saving": 428625,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1104",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 496247,
+          "official_saving": 496247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1105",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1106",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1107",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1108",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1109",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1110",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1111",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 339513,
+          "official_saving": 339513,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1112",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 339513,
+          "official_saving": 339513,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1113",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1114",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1115",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1116",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1117",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 390400,
+          "official_saving": 390400,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1118",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 499315,
+          "official_saving": 499315,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1119",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 340894,
+          "official_saving": 340894,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1120",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1121",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 0,
+          "official_saving": 0,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1122",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 186247,
+          "official_saving": 186247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1123",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 346247,
+          "official_saving": 346247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1124",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1125",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 497935,
+          "official_saving": 497935,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1126",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 537540,
+          "official_saving": 537540,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1127",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 346247,
+          "official_saving": 346247,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1128",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 646455,
+          "official_saving": 646455,
+          "saving_difference": 0
+        },
+        {
+          "case_id": "dev-1129",
+          "same_decisions_and_terms": true,
+          "same_executed_actions": true,
+          "same_outcome": true,
+          "native_saving": 398921,
+          "official_saving": 398921,
+          "saving_difference": 0
+        }
+      ]
+    }
+  },
+  "source_scope": {
+    "path": "negotiation/src/negotiation_agent/session.py",
+    "reason": "Uploaded source preserves 2f57d07 synthetic session; main adds asynchronous human supplier mode. Both measured backends use the same uploaded file and a non-null synthetic supplier. Results are not claimed to execute the entire final main checkout."
+  },
+  "source_zip_sha256": "2dca005b6ad2661d4236fb37ab7ff8b8b9bbadc7b57be82e88957f5cc521dc95",
+  "source_base_revision": "2f57d074c039646dde96ad1afa9e90247b87037a",
+  "dtype_scope": {
+    "native": "fp16 verified in all response metadata",
+    "official": "SGLang auto dtype; SGLANG_MAMBA_CONV_DTYPE=float16 recorded in launch; live backbone tensor dtype not separately captured",
+    "post_run_check": "An extra ModelConfig inspection did not complete before Kaggle reported kernel death. Model runs, comparison, shutdown and original ZIP had already completed and were downloaded and verified."
+  },
+  "shared_colab": "removed_from_public_copy",
+  "kaggle_notebook": "removed_from_public_copy",
+  "notebook_save_verification": {
+    "shared_colab_cells": 52,
+    "sources_and_outputs_equal_to_uploaded": true,
+    "existing_colab_code_outputs_preserved": true,
+    "kaggle_cells": 19,
+    "kaggle_auth_outputs_removed": true,
+    "kaggle_other_outputs_preserved": true,
+    "compact_encoding_decodes_to_exact_measured_zip": true,
+    "kaggle_version": 2,
+    "kaggle_version_id": "370513484",
+    "colab_sha256": "72af14441fe1ad7eb984bb60f9aecf3ad981f90c8b067e0df00fe864e6079bf4",
+    "kaggle_sha256": "1a3f2ed9805982000dad25a8b70c47d39fd6d6069153a74b3e0ca1edef92e0ab"
+  },
+  "kaggle_session_final_status": "off, observed in editor after saving Version 2 with outputs"
+}

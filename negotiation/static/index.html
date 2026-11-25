@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Negotiation · 구매 협상 에이전트</title>
+<link rel="stylesheet" href="/static/app.css?v=20261119-system1">
+<script src="/static/app.js?v=20261120-replay-label" defer></script>
+</head>
+<body>
+<a class="skip" href="#workspace">작업 영역으로 이동</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true">N</span><span>NEGOTIATION<span class="brand-sub">권한 안에서 협상하는 구매 에이전트</span></span></div>
+  <span id="backend-chip" class="backend-chip">추정 backend 확인 중</span>
+  <span class="environment">합성 거래 · 외부 전송 없음</span>
+</header>
+<main>
+<section class="page-intro">
+  <div>
+    <p class="eyebrow">BUYER WORKSPACE</p>
+    <h1>조건을 비교하고,<br class="mobile-only"> 권한 안에서 결정합니다.</h1>
+    <p class="intro-copy">코드가 비용과 권한을 계산하고, 추정은 상대의 수락 가능성만 다룹니다. 한도를 넘는 조건은 사람이 승인한 그 조건만 실행합니다.</p>
+  </div>
+  <div class="legend"><span class="badge calc">계산</span><span class="badge estimate">추정</span><span class="badge execute">실행</span></div>
+</section>
+
+<section class="toolbar" aria-label="시연 설정">
+  <div class="segmented" role="group" aria-label="모드 선택">
+    <button id="simulated" class="selected" type="button">합성 공급사</button>
+    <button id="human" type="button">사람 공급사</button>
+    <button id="replay-mode" type="button" disabled>실행 기록 재생</button>
+    <button id="evidence-mode" type="button" disabled>검증 결과</button>
+  </div>
+  <div id="scenario-controls" class="replay-controls">
+    <label for="scenario">시나리오</label>
+    <select id="scenario"></select>
+  </div>
+  <div id="replay-controls" class="replay-controls" hidden>
+    <label for="replay-case">사례</label><select id="replay-case"></select>
+    <label for="replay-step">판단</label><select id="replay-step"></select>
+  </div>
+  <div class="toolbar-actions">
+    <button id="restart" class="quiet" type="button">처음부터</button>
+    <button id="refresh" class="quiet" type="button">새로고침</button>
+    <button id="autoplay" class="quiet" type="button">자동 진행</button>
+    <button id="step" class="primary" type="button">다음 판단</button>
+  </div>
+</section>
+<p id="evidence" class="evidence-note">추정 backend 확인 중</p>
+<section id="scenario-card" class="scenario-card" hidden>
+  <div><span class="badge calc">시연 설명</span><strong id="scenario-title"></strong></div>
+  <p id="scenario-summary"></p>
+  <p id="scenario-watch" class="scenario-watch"></p>
+  <p class="muted small">이 설명은 화면용입니다. 추정 backend에는 공개 제안 이력과 후보 조건만 전달합니다.</p>
+</section>
+<p id="error" class="error" role="alert" hidden></p>
+<p id="notice" class="sr-only" aria-live="polite"></p>
+
+<section id="workspace" class="workspace" aria-busy="false" tabindex="-1">
+  <aside class="history-column">
+    <div class="section-title"><h2>협상 이력</h2><span id="round" class="small-pill">—</span></div>
+    <p class="muted small" id="item">표준 규격 소모품 · 1,000개</p>
+    <ol id="history" class="history"></ol>
+    <a id="supplier-link" class="supplier-link" target="_blank" rel="noreferrer" hidden>공급사 입력 화면 열기 ↗</a>
+    <p class="muted small">상대에게는 공개 제안과 전달 문장만 보입니다.</p>
+  </aside>
+
+  <div class="analysis-column">
+    <section class="card">
+      <div class="section-title"><h2 id="standing-title">현재 제안 평가</h2><span class="badge calc">계산</span></div>
+      <div class="metrics">
+        <div><span>환산 총비용</span><strong id="cost">—</strong><small>납기·결제 조건 반영</small></div>
+        <div><span>대안 대비 절감</span><strong id="saving">—</strong><small>대안 견적과 비교</small></div>
+        <div><span>목표 대비</span><strong id="target-gap">—</strong><small id="target-caption">목표 총비용 기준</small></div>
+        <div><span>실행 권한</span><strong id="authority">—</strong><small>코드로 한도 확인</small></div>
+      </div>
+    </section>
+    <section class="card cost-card">
+      <div class="section-title"><h2>환산 총비용의 위치</h2><span class="badge calc">계산</span></div>
+      <div id="cost-scale" class="cost-scale" aria-label="비용 기준 비교"></div>
+      <p class="muted small">낮은 비용일수록 유리합니다. 수치는 우리 측 비용 가정으로 계산합니다.</p>
+    </section>
+    <section class="card options-card">
+      <div class="section-title"><h2 id="options-heading">이번 라운드 선택지</h2><span class="muted small" id="option-count">판단 대기</span></div>
+      <div id="options" class="options"></div>
+      <p class="muted small">비교값 = 수락·거절 이후의 절감 추정 − 라운드·승인 비용. 실제 절감액과 다를 수 있습니다.</p>
+    </section>
+  </div>
+
+  <aside class="action-column">
+    <section id="result" class="card result-card" hidden>
+      <div class="section-title"><h2>협상 결과</h2><span id="result-badge" class="badge execute">종료</span></div>
+      <h3 id="result-title"></h3>
+      <dl id="result-values" class="estimate-box"></dl>
+      <p class="muted small">실현 절감은 합의 조건을 대안 견적과 비교해 코드가 계산합니다. 권한 위반은 실행된 모든 행동을 다시 검사한 수입니다.</p>
+    </section>
+    <section class="card decision-card">
+      <div class="section-title"><h2 id="decision-heading">이번 라운드 결정</h2><span class="badge execute">실행</span></div>
+      <p id="status" class="status">—</p>
+      <h3 id="action-title">판단을 기다립니다</h3>
+      <div id="chosen-terms" class="terms-grid"></div>
+      <div id="reasons" class="reason-list"></div>
+      <dl id="estimates" class="estimate-box"></dl>
+      <p id="model-meta" class="muted small"></p>
+      <div id="review" class="review-box" hidden>
+        <p id="review-text">추정 요청이 실패했습니다. 값을 지어내지 않고 멈췄습니다. 실패 기록은 그대로 남습니다.</p>
+        <button id="retry" type="button">다시 추정 요청</button>
+      </div>
+    </section>
+    <section id="approval" class="card approval-card" hidden>
+      <div class="section-title"><h2>내부 승인 요청</h2><span class="badge approval-badge">승인 대기</span></div>
+      <p id="approval-summary"></p>
+      <dl id="approval-values"></dl>
+      <p id="approval-scope" class="muted small"></p>
+      <div id="approval-actions" class="approval-actions">
+        <button id="approve" class="primary" type="button">이 조건 승인</button>
+        <button id="deny" class="quiet" type="button">거절</button>
+      </div>
+      <p id="approval-recorded" class="muted small" hidden>저장된 당시 승인 카드입니다. 기록 재생에서는 승인할 수 없습니다.</p>
+    </section>
+    <section id="system1" class="card system1-card" hidden>
+      <div class="section-title"><h2>System 1 판단 · 진단 · 라우팅 · 검증</h2><span id="system1-reader" class="badge estimate">판독</span></div>
+      <p id="system1-note" class="muted small"></p>
+      <ol id="system1-checks" class="system1-list"></ol>
+    </section>
+    <section class="card">
+      <div class="section-title"><h2>실제 전달한 문장</h2><span id="sent-count" class="muted small">0건</span></div>
+      <blockquote id="sent-message">아직 전달한 문장이 없습니다.</blockquote>
+      <p class="muted small">목표·대안·절감액 같은 내부 값은 전달하지 않습니다.</p>
+    </section>
+  </aside>
+</section>
+
+<section id="evidence-panel" class="evidence-panel" hidden tabindex="-1">
+  <div class="card">
+    <div class="section-title"><h2>실제 Zoro-1 개발 실행: 정책별 평균 실현 절감</h2><span class="badge calc">저장된 측정값</span></div>
+    <p id="evidence-scope" class="muted small"></p>
+    <div id="evidence-bars" class="bar-list" role="table" aria-label="정책별 평균 실현 절감"></div>
+    <p class="muted small">막대는 대안 견적 대비 평균 실현 절감(원)입니다. 회색 막대는 숨은 정답을 쓰는 평가기 전용 참고 상한이며 경쟁 대상이 아닙니다.</p>
+  </div>
+  <div class="evidence-grid">
+    <div class="card">
+      <div class="section-title"><h2>Zoro 추정 에이전트와의 차이</h2><span class="badge calc">사례 bootstrap 90%</span></div>
+      <div id="evidence-differences" class="interval-list"></div>
+      <p class="muted small">점은 평균 차이, 선은 90% 구간, 세로선은 0입니다. 구간이 0을 포함하면 우위를 말할 수 없습니다. 중간값 기준선과의 차이는 위 막대에서 확인합니다.</p>
+    </div>
+    <div class="card">
+      <div class="section-title"><h2>안전 장치와 서빙 경로</h2><span class="badge calc">저장된 측정값</span></div>
+      <div id="evidence-tiles" class="tile-grid"></div>
+      <p id="evidence-probe" class="muted small"></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="section-title"><h2>읽는 법과 한계</h2></div>
+    <ul class="caveats">
+      <li>모든 공급사는 규칙 기반 합성 시뮬레이터입니다. 실제 기업 협상 성과가 아닙니다.</li>
+      <li>개발 분할 30건을 한 번 실행한 값입니다. 평가 분할은 아직 사용하지 않았습니다.</li>
+      <li>승인은 모두 합성 자동 승인 fixture였습니다. 사람의 승인이 아닙니다.</li>
+      <li>수락 추정은 보정된 현실 수락 확률이 아닙니다. 후보 점수 실험의 사전 고정 판정은 C/D였습니다.</li>
+      <li>이 패널은 저장소에 보존한 요약 파일을 읽기만 합니다. 지금 모델을 호출하지 않습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<footer><span id="footer-backend">추정 backend 확인 중</span><span id="replay-availability">실제 모델 실행 기록: 연결되지 않음</span></footer>
+</main>
+</body>
+</html>

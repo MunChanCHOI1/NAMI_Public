@@ -1,0 +1,1925 @@
+{
+  "rule_version": "s2-seed-rule-2026-11-19.v1",
+  "scenario_set_version": "submission-scenarios-2026-11-19.v1",
+  "evidence_class": "real_model_run",
+  "backend": {
+    "kind": "zoro_native",
+    "is_model": true,
+    "configuration": {
+      "original_checkpoint": "/kaggle/temp/negotiation-model-cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/kaggle/temp/negotiation-model-cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/kaggle/temp/negotiation-7d1540761c48/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0
+    },
+    "model_id": "trillionlabs/Zoro-1",
+    "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+    "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+    "backend": "transformers_native_pointer_head",
+    "dtype": "fp16",
+    "device": "cuda:0",
+    "gpu_name": "Tesla T4",
+    "decision_temperature": 1.0,
+    "temperature_source": "explicit_override; not independently calibrated",
+    "official_sglang_parity_verified": false,
+    "head_loaded": true,
+    "mock": false,
+    "gpu_execution_performed": true,
+    "runtime_versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.17.0",
+      "accelerate": "1.15.0",
+      "huggingface-hub": "1.33.0",
+      "safetensors": "0.8.0"
+    },
+    "peak_cuda_memory_allocated_bytes": 8657565696,
+    "last_response_metadata": {
+      "request_sha256": "5508c276102dd3820eca50d2237871a744481c2e66708b625f113fb035f52ee4",
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "backend": "transformers_native_pointer_head",
+      "official_sglang_parity_verified": false,
+      "head_loaded": true,
+      "head_file_sha256": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db",
+      "generation_used": false,
+      "mock": false,
+      "authoring_gpu_tested": true,
+      "gpu_execution_performed": true,
+      "native_head_forward_calls": 3,
+      "dtype": "fp16",
+      "attention_backend": "eager",
+      "gdn_backend": "native_pytorch_no_fla_or_causal_conv1d",
+      "device": "cuda:0",
+      "gpu_name": "Tesla T4",
+      "decision_temperature": 1.0,
+      "temperature_source": "explicit_override; not independently calibrated",
+      "exported_temperature": 1.0,
+      "runtime_temperature_matches_export": true,
+      "backbone_loading_info": {
+        "missing_keys": [],
+        "unexpected_keys": [],
+        "mismatched_keys": [],
+        "error_msgs": []
+      },
+      "backbone_first_parameter_device": "cuda:0",
+      "backbone_first_parameter_dtype": "torch.float16",
+      "runtime_versions": {
+        "torch": "2.11.0+cu130",
+        "transformers": "5.17.0",
+        "accelerate": "1.15.0",
+        "huggingface-hub": "1.33.0",
+        "safetensors": "0.8.0"
+      },
+      "input_tokens_per_question": [
+        907,
+        897,
+        887
+      ],
+      "question_option_order": {
+        "s1_accept_exact": [
+          "false",
+          "true"
+        ],
+        "s1_off_script": [
+          "false",
+          "true"
+        ],
+        "u_instruction": [
+          "false",
+          "true"
+        ]
+      },
+      "backbone_forward_latency_ms": 1922.461,
+      "model_only_latency_ms": 1925.534,
+      "backend_latency_ms": 1932.224,
+      "peak_cuda_memory_allocated_bytes": 8657565696,
+      "probability_notice": "Probabilities rank allowed actions; they are not calibrated attack probabilities."
+    }
+  },
+  "seeds": [
+    1000,
+    1099
+  ],
+  "chosen_seed": 1004,
+  "qualifying_seeds": [
+    1004,
+    1010,
+    1011,
+    1016,
+    1018,
+    1021,
+    1022,
+    1023,
+    1032,
+    1040,
+    1041,
+    1042,
+    1045,
+    1046,
+    1049,
+    1053,
+    1061,
+    1066,
+    1068,
+    1070,
+    1073,
+    1075,
+    1084,
+    1088,
+    1090,
+    1091,
+    1094,
+    1099
+  ],
+  "seeds_with_approval_card": [
+    1000,
+    1003,
+    1004,
+    1005,
+    1010,
+    1011,
+    1013,
+    1014,
+    1016,
+    1018,
+    1021,
+    1022,
+    1023,
+    1031,
+    1032,
+    1036,
+    1040,
+    1041,
+    1042,
+    1043,
+    1045,
+    1046,
+    1049,
+    1053,
+    1058,
+    1061,
+    1066,
+    1068,
+    1069,
+    1070,
+    1072,
+    1073,
+    1074,
+    1075,
+    1076,
+    1084,
+    1085,
+    1086,
+    1088,
+    1090,
+    1091,
+    1094,
+    1096,
+    1097,
+    1099
+  ],
+  "notice": "demonstration seed choice made with this backend, not an evaluation result",
+  "rows": [
+    {
+      "seed": 1000,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10590,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 220696,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1001,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1002,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1003,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1004,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1005,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1006,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10320,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 488033,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1007,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1008,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1009,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1010,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1011,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1012,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10560,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 4,
+      "saving_vs_alternative": 250400,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1013,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1014,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10570,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 240499,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1015,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1016,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10620,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 190992,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1017,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1018,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10360,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1019,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1020,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1021,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1022,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10500,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1023,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1024,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1025,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1026,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1027,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10300,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 507836,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1028,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1029,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1030,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1031,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1032,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10360,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1033,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1034,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1035,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1036,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10680,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 2,
+      "approvals_granted": 2,
+      "rounds": 5,
+      "saving_vs_alternative": 131584,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1037,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1038,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1039,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1040,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10760,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 192373,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1041,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10360,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1042,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10500,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1043,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10780,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 2,
+      "approvals_granted": 2,
+      "rounds": 5,
+      "saving_vs_alternative": 32570,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1044,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10560,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 4,
+      "saving_vs_alternative": 250400,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1045,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10360,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1046,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10760,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 192373,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1047,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10320,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 488033,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1048,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1049,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1050,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 359315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1051,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1052,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1053,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1054,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1055,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1056,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10430,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 379118,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1057,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1058,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10610,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 200894,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1059,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 359315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1060,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1061,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1062,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1063,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10480,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 4,
+      "saving_vs_alternative": 329611,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1064,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10310,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 497935,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1065,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1066,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1067,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10390,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 418724,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1068,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10620,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 190992,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1069,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10580,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 230598,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1070,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10620,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 190992,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1071,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1072,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1073,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10760,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 192373,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1074,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1075,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1076,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10590,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 220696,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1077,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10450,
+        "delivery_days": 14,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 2,
+      "saving_vs_alternative": 499315,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1078,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10340,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 468231,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1079,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1080,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1081,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1082,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1083,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1084,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1085,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1086,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1087,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1088,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1089,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1090,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10360,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 3,
+      "saving_vs_alternative": 346247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1091,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10620,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 190992,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1092,
+      "qualifies": false,
+      "status": "supplier_walked",
+      "agreement": null,
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1093,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1094,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10520,
+        "delivery_days": 21,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1095,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10410,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 398921,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1096,
+      "qualifies": false,
+      "status": "ended_alternative",
+      "agreement": null,
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 5,
+      "saving_vs_alternative": 0,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1097,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10600,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 210795,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1098,
+      "qualifies": false,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10470,
+        "delivery_days": 21,
+        "payment_days": 60
+      },
+      "approval_cards": 0,
+      "approvals_granted": 0,
+      "rounds": 3,
+      "saving_vs_alternative": 339513,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    },
+    {
+      "seed": 1099,
+      "qualifies": true,
+      "status": "agreed",
+      "agreement": {
+        "unit_price": 10660,
+        "delivery_days": 14,
+        "payment_days": 0
+      },
+      "approval_cards": 1,
+      "approvals_granted": 1,
+      "rounds": 4,
+      "saving_vs_alternative": 186247,
+      "authority_violations": 0,
+      "system1_failed_answers": 0,
+      "model_failures": 0
+    }
+  ],
+  "created_at_utc": "2026-11-19T08:45:09+00:00",
+  "provenance": {
+    "created_at_utc": "2026-11-19T08:24:31+00:00",
+    "git_commit": null,
+    "input_sha256": {
+      "config/model_pins.json": "f4eaf65c29927a462effc9af7159f560eb4c0460b57c5265526b682786d05fb0",
+      "negotiation/run_choice_probe.py": "2c40004c976c286d9fd31beecfa27d3eef0fcc6c81e6ab19fb6120865f1d7833",
+      "negotiation/run_evaluation.py": "8b67e79f3bb9761a82343588951c89e3f69292bc05ed20fa851131e4eeb66240",
+      "negotiation/run_negotiation.py": "602a693d80ce33cf143b63c5be5284c31fa20ed2977b5a55ab5824562c0d696c",
+      "negotiation/run_play.py": "0b4fb7f0f6272fd2270e8abd3b7d1ce5dbe37720a93b01f2e8b9ef100f8d338f",
+      "negotiation/run_probe.py": "4f4cf31afe3ad192668959c091b150a56d9d20e0354a8c0ceddef233723895b8",
+      "negotiation/run_s2_sweep.py": "a4fc0211cbd039a3d99bf9d812367d579cdf9addc3b3250fb5e8d0cb21dac108",
+      "negotiation/run_scenarios.py": "bae06cbd2655c6ee7c6d4ce49ffa71f94c7a11620a41cea25c251d3cc79fb537",
+      "negotiation/run_system1_probe.py": "8fd350aeabea56cbd5f5a389335dde6d950fdd44d13660050b7620be9023531c",
+      "negotiation/run_tune.py": "8b03be9220dd0bed6cad8031510298d504c80fd4103726d8b64d561c976301de",
+      "negotiation/run_utterance_probe.py": "fd7ccc3e226cfd912795ff795b74ddb58530e8c8556b03aaccc14a198f494781",
+      "negotiation/run_web.py": "fc5f1deaa916d5babd6774fd13750d929d72c93007381a73731f1cd3d27334b1",
+      "negotiation/src/negotiation_agent/__init__.py": "7c643f13a6c60b65e78c6d1d1a93fc8d8d8414d15ba3b60c945b22c43d1134fc",
+      "negotiation/src/negotiation_agent/backends.py": "92c12ece0db83dda4d1e5ff0474b1b4c3baa7804e3a26fa9e907cfa673e70525",
+      "negotiation/src/negotiation_agent/baselines.py": "f18a51b0db6a6d255e40b5aa669f3c3ceb2aae1189997008558d36de56c054d3",
+      "negotiation/src/negotiation_agent/choice_probe.py": "cdf404d79608ddb001295fbaab4a188b98955c2a40c3ca8c5feea14a8498c555",
+      "negotiation/src/negotiation_agent/cli.py": "4c9d62a60fd95fb13c284fd4030f76dc4daa8e122c834ca7a086c39366ff1fdf",
+      "negotiation/src/negotiation_agent/contracts.py": "7bb63b423cd01ce38d8cd1dd19213f9566fd27819ac390ced73a348ae308362f",
+      "negotiation/src/negotiation_agent/economics.py": "bfd78827d97be734bab1a71657469a3b317f69ee344dde0e23556bdedcd32f70",
+      "negotiation/src/negotiation_agent/estimate_sources.py": "7f867b9619753363115a65f204ac09b68ae3646cb520f42f4e867270c3f6c5ee",
+      "negotiation/src/negotiation_agent/evaluation.py": "b26a69459eb87c1797320fd68eb322facf53fe52afd371db9e1142bca69fd682",
+      "negotiation/src/negotiation_agent/metrics.py": "72ff392242038753a0fec195b8b3d1e36a8918c150d8bfaad2ee19d6ed2013b6",
+      "negotiation/src/negotiation_agent/playground.py": "e9e80dd27d9303f5b504cffd93f6a109f43173ba8d6c25375e369c0af455f631",
+      "negotiation/src/negotiation_agent/policy.py": "5c2db96066e48f76ca5e945154f0287bf940a848b4e34a9dbe343997a4b6ae7d",
+      "negotiation/src/negotiation_agent/prediction_store.py": "5b78787d21eabe78146108dfde45e279f47fc6a434206736ff443473e34ad373",
+      "negotiation/src/negotiation_agent/probe.py": "5d27d94d19324b8916bfb5f257e336093b16e0d66794de10077dd07ed39559a2",
+      "negotiation/src/negotiation_agent/provenance.py": "88d78f32bb443436251011ba591767f88a7fdbd88f2b8b1054431fe394395fe3",
+      "negotiation/src/negotiation_agent/requests.py": "ea346e8f7225693e67625dff2d4bedf5c99fc583a3c3d6621fbaab22dc709571",
+      "negotiation/src/negotiation_agent/scenarios.py": "9e3cd502cad6e6fe9380149bdd6fcbaf6e279cf9e7eefbb80a7d412ceb1f0a45",
+      "negotiation/src/negotiation_agent/session.py": "d7244048edb02470fcec0c2c656d0e3f93162ebc18ddc7943d094f234b380a95",
+      "negotiation/src/negotiation_agent/simulator.py": "42406962e5044ebf7705205e1daa0682d4c2357002bc5cdcbe6299c04039b6a9",
+      "negotiation/src/negotiation_agent/system1.py": "08fa4314fccf6d43faac0862bc4000813872474c781a65bdfc265187aa752e42",
+      "negotiation/src/negotiation_agent/tune.py": "f214a4f7de3cd46b623a3e0f8aa9bb0f3c3ac545cfa0c3822eb2f069340b77e8",
+      "negotiation/src/negotiation_agent/utterance_probe.py": "2b2bec1ac7bd3cc9d043d2da8c89e12017036751d02d3e2d9d76fdddd5310691",
+      "negotiation/src/negotiation_agent/web.py": "60477cdfd6edf4ed1506ea14453dbffb97382d7fe3c38040b439eecb9df470a0",
+      "pyproject.toml": "a614520a66479c760b302ee8a5b28c3fdfd8bac9dd01b2725ffea392dbbb93c8",
+      "requirements-cpu.lock.txt": "67ef3ee6983b45c3c307d0d0a730807d94ae14eac5bd3b78aa485b8d05a0fcca",
+      "requirements-gpu.txt": "c5ae9ab10891e55050195be3e835f89012e50b75615d4b0b3802f884b64d6552",
+      "src/sessionguard/__init__.py": "d26697564b55f4a71cc7c9e647acbd8e7908e3f0d49599cd841e8293ce1ace89",
+      "src/sessionguard/backends/__init__.py": "f57137b8086c18b5c21a39b33c144a5ba8e01cdcd725329ed8ba26f42244c90d",
+      "src/sessionguard/backends/zoro.py": "8ed39cb3de9533be0fcb76c7a75b64e17651ea1daf2274f561e97e017754acf5",
+      "src/sessionguard/backends/zoro_http.py": "609e0ca1aa31a1acc178330c8894d19bb421db538114a03d68958a3fe29f91d9",
+      "src/sessionguard/contracts.py": "6bd6798a6a04958707f163d6c23e29b855a650c12c7166b6c15a46d302ea4769"
+    },
+    "model_pins": {
+      "schema_version": 1,
+      "model_id": "trillionlabs/Zoro-1",
+      "model_revision": "766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "source_repository": "trillion-labs/trida-stack",
+      "source_revision": "3a7877868c63ff82af14f707a1018bc0baac0711",
+      "official_source_files": {
+        "train/tools/export_kev_checkpoint.py": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "inference/zoro-1/decide_request.py": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "inference/zoro-1/decide_engine.py": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30"
+      },
+      "official_server_files": {
+        "inference/zoro-1/serve_decide.py": "6a009a3511cbd63b379ed5243dcebcd38e0ee25e0e9758df72a59ca289e54233"
+      },
+      "transformers_candidate_version": "5.17.0",
+      "real_zoro_gpu_execution_verified": true,
+      "official_sglang_parity_verified": false,
+      "temperature_policy": "original_checkpoint/temperature.json:text; absent => raw 1.0; explicit override must be recorded",
+      "official_decide_server_execution_verified": false
+    },
+    "execution_config": {
+      "backend": "zoro",
+      "original_checkpoint": "/kaggle/temp/negotiation-model-cache/hf/models--trillionlabs--Zoro-1/snapshots/766c5522cfb7df47dc9546df20fe3ce6efe6067c",
+      "exported_checkpoint": "/kaggle/temp/negotiation-model-cache/zoro-text-766c5522cfb7",
+      "official_source_dir": "/kaggle/temp/negotiation-7d1540761c48/.cache/trida-stack",
+      "device": "cuda:0",
+      "dtype": "fp16",
+      "max_input_tokens": 2048,
+      "decision_temperature": 1.0
+    },
+    "official_source_files": {
+      "train/tools/export_kev_checkpoint.py": {
+        "expected_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "actual_sha256": "dcb10a46d1a6495cbfe66974eaf50aacf5428ca091b993a36d40aec099548d80",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_request.py": {
+        "expected_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "actual_sha256": "41b1734e112b5310231d7bacb72e92a8a933feb4504bcdf0ef1f8ad0d8131f56",
+        "matches_pin": true
+      },
+      "inference/zoro-1/decide_engine.py": {
+        "expected_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "actual_sha256": "41d75d4b04c990af50cdf6ae332dac0f0480db5e2ae1a3e5546946f6cf6ccc30",
+        "matches_pin": true
+      }
+    },
+    "checkpoint_metadata_sha256": {
+      "original_checkpoint": {
+        "config.json": "ac5e925540bc34d0a16a4c403d00705c35c9cfbca5113af417a03b364dd82a92",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": "c04c66e3709d0ce626fa0fb30ed44db7c038d83fb9e8c303f3c66cd56de7d95b",
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": null,
+        "jev_head.pt": "1e406f44fd66191cc16bbddf02213182a0e8403ee98ae971fedf8f72a294d9db"
+      },
+      "exported_checkpoint": {
+        "config.json": "5509ddb7f687327c96a6a947e5866144cf009fe69d68a88e67913ec6fc140fc2",
+        "temperature.json": null,
+        "tokenizer_config.json": "9f1118d4176937ffb80f2fb3ad3ff59b70f238bef59cd9c91579e3209a690ac6",
+        "tokenizer.json": "37b81042a52194b32681508d12faf484b1d9052501b1f564f2da1388865ebdf0",
+        "model.safetensors.index.json": null,
+        "export_metadata.json": null,
+        "export_manifest.json": null,
+        "head.pt": "207ccd4202628ef18bd91d5c86dfc31614d811024038903d835384a609c6536d",
+        "jev_head.pt": null
+      }
+    },
+    "notice": "Source/config snapshot only; execution is evidenced by each recorded response."
+  }
+}

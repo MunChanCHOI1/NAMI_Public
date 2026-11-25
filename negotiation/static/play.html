@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>협상 체험 · Negotiation</title>
+<link rel="stylesheet" href="/static/app.css?v=20261119-play4">
+<script src="/static/play.js?v=20261119-play4" defer></script>
+</head>
+<body>
+<a class="skip" href="#composer">응답 입력으로 이동</a>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true">N</span><span>NEGOTIATION<span class="brand-sub">협상 체험 · 내가 공급사</span></span></div>
+  <span id="backend-chip" class="backend-chip">에이전트 확인 중</span>
+  <a class="environment" href="/">대시보드로</a>
+</header>
+<main class="play-main">
+  <section class="page-intro">
+    <div>
+      <p class="eyebrow">PLAYGROUND</p>
+      <h1>공급사가 되어 구매 에이전트와 협상해 보세요.</h1>
+      <p class="intro-copy">에이전트는 구매사 편입니다. 내가 조건과 문장을 보내면 에이전트가 스스로 판단해 답합니다. 권한을 넘는 조건은 승인 카드에서 내가 구매사 내부 승인자로서 승인·거절합니다. 모든 거래는 합성이며 외부로 전송되지 않습니다.</p>
+    </div>
+    <button id="restart" class="quiet" type="button" hidden>새 협상</button>
+  </section>
+  <p id="error" class="error" role="alert" hidden></p>
+  <p id="notice" class="sr-only" aria-live="polite"></p>
+
+  <section id="start" class="card play-start">
+    <div class="section-title"><h2>첫 견적 보내기</h2><span class="badge calc">표준 규격 소모품 · 1,000개</span></div>
+    <p class="muted small">공급사로서 첫 조건을 정하세요. 성격을 고르면 예시 값이 채워집니다. 숫자와 문장은 자유롭게 바꿀 수 있습니다.</p>
+    <div id="personas" class="chip-row" role="group" aria-label="공급사 성격 예시"></div>
+    <form id="start-form" class="play-terms">
+      <label>단가 (원)<input id="s-price" type="number" min="1" max="1000000" step="1" inputmode="numeric" required></label>
+      <label>납기 (일)<input id="s-delivery" type="number" min="1" max="3650" step="1" inputmode="numeric" required></label>
+      <label>납품 후 결제 (일)<input id="s-payment" type="number" min="0" max="3650" step="1" inputmode="numeric" required></label>
+      <label class="wide">전달할 문장 (200자까지)<textarea id="s-message" maxlength="200" rows="2"></textarea></label>
+      <button id="start-button" class="primary wide" type="submit">이 견적으로 협상 시작</button>
+    </form>
+  </section>
+
+  <section id="play" class="play-layout" hidden>
+    <section class="card chat-card">
+      <div class="section-title"><h2>협상 대화</h2><span id="round" class="small-pill">—</span></div>
+      <p id="status" class="evidence-note">—</p>
+      <ol id="chat" class="chat" aria-live="polite"></ol>
+      <div id="thinking" class="bubble agent thinking" hidden><span class="who">에이전트</span>판단 중입니다…</div>
+      <div id="result" class="play-result" hidden></div>
+      <form id="composer" class="composer" hidden>
+        <p id="answer-to" class="answer-to"></p>
+        <div class="play-terms">
+          <label>단가 (원)<input id="c-price" type="number" min="1" max="1000000" step="1" inputmode="numeric"></label>
+          <label>납기 (일)<input id="c-delivery" type="number" min="1" max="3650" step="1" inputmode="numeric"></label>
+          <label>납품 후 결제 (일)<input id="c-payment" type="number" min="0" max="3650" step="1" inputmode="numeric"></label>
+        </div>
+        <label class="message-label">전달할 문장 (200자까지)<textarea id="c-message" maxlength="200" rows="2" placeholder="예: 결제를 앞당겨 주시면 단가를 더 낮출 수 있습니다."></textarea></label>
+        <div id="phrases" class="chip-row" role="group" aria-label="문장 예시"></div>
+        <div class="composer-actions">
+          <button id="counter" class="primary" type="submit">이 조건으로 역제안</button>
+          <button id="accept" type="button">에이전트 조건 수락</button>
+          <button id="walk" class="quiet" type="button">협상 종료</button>
+        </div>
+        <div id="same-terms" class="same-terms" role="alert" hidden>
+          <p>입력한 숫자가 에이전트가 보낸 조건과 같습니다. 이대로 보내면 에이전트 조건을 받아들이는 것과 같아서 에이전트가 바로 확정합니다.</p>
+          <div class="composer-actions">
+            <button id="same-accept" class="primary" type="button">에이전트 조건 수락으로 보내기</button>
+            <button id="same-edit" type="button">숫자 고치기</button>
+          </div>
+        </div>
+        <p id="last-round" class="muted small" hidden>마지막 라운드입니다. 이제 수락하거나 종료할 수만 있습니다.</p>
+      </form>
+    </section>
+
+    <aside class="play-side">
+      <section id="approval" class="card approval-card" hidden>
+        <div class="section-title"><h2>구매사 내부 승인 요청</h2><span class="badge approval-badge">내가 승인자</span></div>
+        <p id="approval-summary"></p>
+        <dl id="approval-values"></dl>
+        <p id="approval-warning" class="negative small" hidden>이 라운드의 공급사 제안에는 단가·납기·결제 밖의 요구가 붙어 있었습니다. 승인은 이 세 조건에만 적용되며, 그 요구는 합의에 포함되지 않습니다.</p>
+        <p class="muted small">에이전트 권한을 넘는 조건입니다. 이 조건 하나에만 적용되며, 승인해도 전송 직전에 권한을 다시 확인합니다.</p>
+        <div class="approval-actions">
+          <button id="approve" class="primary" type="button">이 조건 승인</button>
+          <button id="deny" class="quiet" type="button">거절</button>
+        </div>
+      </section>
+      <section id="review" class="card review-card" hidden>
+        <div class="section-title"><h2>에이전트가 멈췄습니다</h2><span class="badge approval-badge">사람 검토</span></div>
+        <p id="review-text"></p>
+        <button id="withhold" class="primary" type="button" hidden>역제안 없이 진행 · 수락·종료만 검토</button>
+        <button id="resume" type="button">검토했음 · 계속 진행</button>
+      </section>
+      <section class="card inner-card">
+        <div class="section-title">
+          <h2>에이전트 내부</h2>
+          <label class="toggle"><input id="show-inner" type="checkbox" checked> 보기</label>
+        </div>
+        <p class="muted small">테스터 전용입니다. 실제 공급사에게는 보이지 않는 구매사 측 정보와 판단 근거입니다.</p>
+        <div id="inner">
+          <h3 class="inner-heading">마지막 판단</h3>
+          <div id="decision" class="inner-block"></div>
+          <h3 class="inner-heading">System 1 판단 · 진단 · 라우팅 · 검증 <span id="system1-reader" class="badge calc"></span></h3>
+          <ol id="system1-checks" class="system1-list"></ol>
+          <h3 class="inner-heading">구매사 비공개 기준</h3>
+          <dl id="private" class="estimate-box"></dl>
+        </div>
+      </section>
+    </aside>
+  </section>
+<footer><span id="footer-backend">에이전트 확인 중</span><span>합성 거래 · 외부 전송 없음 · 실제 계약 아님</span></footer>
+</main>
+</body>
+</html>

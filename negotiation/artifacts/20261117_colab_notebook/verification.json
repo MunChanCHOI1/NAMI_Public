@@ -1,0 +1,205 @@
+{
+  "source": {
+    "source_commit": "2f57d074c039646dde96ad1afa9e90247b87037a",
+    "content_sha256": "8d75ff31491e21bda062b77d39b34d542a075fbc280501c2da5745ae251f269c",
+    "zip_sha256": "f7209d90e47dbf47ebef0dd1483693aad25508866781d7263022c58c665eecbe",
+    "created_at": "2026-11-17T01:11:53.656563+00:00",
+    "notice": "New development run; separate from the saved 2026-11-16 measurements."
+  },
+  "smoke": {
+    "requests": 2,
+    "questions": 6,
+    "backend_call_seconds_total": 8.1049,
+    "peak_cuda_allocated_bytes": 8517483520
+  },
+  "probe": {
+    "requests": 132,
+    "questions": 540,
+    "backend_call_seconds_total": 148.7466,
+    "peak_cuda_allocated_bytes": 8560774656
+  },
+  "dev30": {
+    "requests": 77,
+    "questions": 410,
+    "backend_call_seconds_total": 126.9218,
+    "peak_cuda_allocated_bytes": 8629689344,
+    "verified_cache_reuses": 15
+  },
+  "all_requests_match_native_hash": true,
+  "all_real_t4_fp16": true,
+  "input_source_hashes_match": true,
+  "official_source_hashes_match": true,
+  "dev_cases": 30,
+  "heldout_executed": false,
+  "probe_verdict": "C_or_D_candidate_scoring_weak_run_action_choice_probe",
+  "dev_agent": {
+    "cases": 30,
+    "complete": true,
+    "needs_review": 0,
+    "mean_realized_saving": 306426.4666666667,
+    "mean_net_saving_after_process_costs": 267093.13333333336,
+    "authority_violations": 0,
+    "agreements_not_better_than_alternative": 0,
+    "feasible_cases": {
+      "n": 25,
+      "agreement_rate": 0.88,
+      "supplier_walked": 3,
+      "mean_capture_of_attainable": 0.5425874354604565,
+      "target_met_rate": 0.12
+    },
+    "infeasible_cases": {
+      "n": 5,
+      "ended_without_agreement_rate": 1.0,
+      "mean_rounds_used": 3.2,
+      "approval_cards": 4
+    },
+    "process": {
+      "mean_rounds_used": 2.6666666666666665,
+      "approval_cards": 15,
+      "model_requests": 77,
+      "latency_ms_per_request": {
+        "median": 1538.9,
+        "max": 5675.8
+      }
+    },
+    "recovery_after_rejected_counter": {
+      "instances": 4,
+      "final_saving_over_saving_given_up": 1.4437185979251188
+    },
+    "final_offer_estimates": {
+      "n": 76,
+      "source": [
+        "backend_estimate"
+      ],
+      "base_rate": 0.15789473684210525,
+      "auc": 0.5638020833333334,
+      "brier": 0.21976409029312147,
+      "brier_base_rate": 0.13296398891966757,
+      "brier_skill": -0.6528090957461847,
+      "note": "rounds before the public last round, on states this policy reached"
+    },
+    "acceptance_estimates": {
+      "n": 333,
+      "base_rate": 0.2222222222222222,
+      "auc": 0.6741104038401335,
+      "brier": 0.17411344890360286,
+      "brier_base_rate": 0.17283950617283952,
+      "brier_skill": -0.0073706686565593316,
+      "ece": 0.1053965724221579,
+      "bins": [
+        {
+          "bin": [
+            0.0,
+            0.2
+          ],
+          "n": 303,
+          "mean_p": 0.1017,
+          "accept_rate": 0.1947
+        },
+        {
+          "bin": [
+            0.2,
+            0.4
+          ],
+          "n": 28,
+          "mean_p": 0.2589,
+          "accept_rate": 0.5
+        },
+        {
+          "bin": [
+            0.4,
+            0.6
+          ],
+          "n": 2,
+          "mean_p": 0.4152,
+          "accept_rate": 0.5
+        },
+        {
+          "bin": [
+            0.6,
+            0.8
+          ],
+          "n": 0
+        },
+        {
+          "bin": [
+            0.8,
+            1.0
+          ],
+          "n": 0
+        }
+      ],
+      "note": "scored only on states this policy reached"
+    }
+  },
+  "dev_minus_rule": {
+    "realized_saving": {
+      "metric": "realized_saving",
+      "cases": 30,
+      "mean_difference": 22162.8,
+      "ci90": [
+        -16307.4,
+        62439.9
+      ],
+      "wins": 7,
+      "ties": 12,
+      "losses": 11
+    },
+    "net_saving": {
+      "metric": "net_saving",
+      "cases": 30,
+      "mean_difference": 27162.8,
+      "ci90": [
+        -11886.4,
+        67025.13333333333
+      ],
+      "wins": 10,
+      "ties": 10,
+      "losses": 10
+    }
+  },
+  "comparison_to_20261116": {
+    "shared_probe_probabilities": 540,
+    "max_probe_probability_difference": 0.0,
+    "dev_mean_saving_difference": 0.0
+  },
+  "result_archive_sha256": "7c195ab0a786fb5744fba846fa3401c1728ead472a67c0e36e9b8277132842e8",
+  "result_files_sha256": {
+    "command-1b4a8315.log": "76a74e38cfe2e98f968985658a86ee9d3645490278d9ab4b861f35b44ad019ac",
+    "command-205d126c.log": "15b62b6ad3cf6c73f8064c3a7f74f448a92a4a25814157de9c2e54d26f0f10ad",
+    "command-3129540e.log": "9ad6c8bb0f5fd75eda1773325e385eec8481908773cafb7735e5e69ff972f256",
+    "command-ae5bebe6.log": "63367c00aba6f36fd744f5cb747217f5eff69494cadae745d88c1919bd564c58",
+    "command-b6b0f0cb.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "command-d12614f6.log": "8b0e616676989134ffb8d9731f7ef2f31fe04d3f16a0a2340084a697cf9c8232",
+    "commands.jsonl": "116a7a062cec0302b018df18970be18b381ef1e7cea02386347e39732af336e8",
+    "source.json": "b257d27ad3bad86ca151326133e9e15e42f35f21f5152c1b9c1f08d1a99afa45",
+    "dev30-2feba68a\\result.json": "24fe79c5df136da029de38c76301a79633a7c10df7ed5b73960b31d6b08b843e",
+    "dev30-2feba68a\\result.json.decisions.jsonl": "ab5f0827ca368f057f6a19e404a94dff57ce6af357335d2a12c84e425ee60e24",
+    "probe-38e3fc07\\result.json": "234a196812bddf1e21a7a50735aa79a2e2d2a7301caa6172799f37ab1c8b67b9",
+    "probe-38e3fc07\\result.json.calls.jsonl": "2506b65894adde250d49789d9f6b5f20bea97731e35c051ec22b4d2357d651c9",
+    "setup-install\\setup_report.json": "e62db35a812824d2903dfe9d03e4330e0f4ada02fba5f52a23908d71945ced69",
+    "setup-model\\export_process.log": "ea33704604f214d91f499f3d7083c35ba5f92644e2ca0b936db0a611c2de436d",
+    "setup-model\\setup_report.json": "2897623e2eadb189bc68afd9a3c8b47b91befa49cb988bc636eb64edb16cdf47",
+    "smoke-b71410de\\result.json": "7ac2d65cbad13c410d8e28ce24933d66cb242c0eb281fb5c41d9f52c422950b2",
+    "smoke-b71410de\\result.json.calls.jsonl": "4dcdb6b55c73073ecd0e0807311944e59c111a14ce3f5a5891933e7c0dc4d1e3"
+  },
+  "verification_date": "2026-11-17",
+  "notebook_file_id": "removed_from_public_copy",
+  "notebook_saved_and_download_verified": true,
+  "executed_notebook_cells": 9,
+  "notebook_shared_cells": 42,
+  "sessionguard_historical_code_cells_preserved": 10,
+  "auth_output_removed": true,
+  "display_cell_rerun_after_wording_change": true,
+  "colab_cleared_prior_execution_counts_on_reconnect": true,
+  "original_execution_counts_verified_before_reconnect": true,
+  "saved_notebook_sha256": "1f04d3073969d670dbd0aed95a2084bafbea81d68735c9d2031b440c093e378d",
+  "cpu_suite": {
+    "passed": 262,
+    "skipped": 1,
+    "subtests_passed": 6,
+    "seconds": 13.92
+  },
+  "official_sglang_executed": false,
+  "kaggle_executed": false
+}

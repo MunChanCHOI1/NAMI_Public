@@ -1,0 +1,13 @@
+{
+  "base_commit": "1b27ca5145583a7cfee1131bc4daaf8099828ec5",
+  "uncommitted_worktree": true,
+  "content_sha256": "02de0401628cbfedb2e9965cc0a25350a09557e27a091f5361dda9bdf11cb885",
+  "zip_sha256": "6755abcd4a2f642475419646ec2d5feab5af92f013f98cdc3a1650cadb4895da",
+  "files": 271,
+  "bytes": 7336107,
+  "excluded": [
+    "notebooks/make_system1_kaggle.py",
+    "notebooks/negotiation_system1_kaggle.ipynb"
+  ],
+  "created_at_utc": "2026-11-19T08:14:09+00:00"
+}
